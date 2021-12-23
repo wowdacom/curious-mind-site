@@ -1,0 +1,21 @@
+{
+  "name": "none-chinese-a-year",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "firebase": "^9.4.1",
+    "vue": "^3.2.25",
+    "vue-router": "^4.0.12"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.0.0",
+    "unplugin-vue-components": "^0.17.9",
+    "vite": "^2.7.2",
+    "vite-plugin-windicss": "^1.6.1",
+    "windicss": "^3.4.0"
+  }
+}
