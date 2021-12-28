@@ -144,10 +144,10 @@ export default {
     },
   },
   setup(props) {
-    const apiKey = process.env.FIRESTORAGE_APP_APIKey;
-    const apiSecret = process.env.FIRESTORAGE_APP_APIId;
-    console.log(apiKey);
-    console.log(apiSecret);
+    // const apiKey = process.env.FIRESTORAGE_APP_APIKey;
+    // const apiSecret = process.env.FIRESTORAGE_APP_APIId;
+    // console.log(apiKey);
+    // console.log(apiSecret);
   },
 };
 </script>
