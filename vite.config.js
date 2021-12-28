@@ -7,6 +7,35 @@ import ViteComponents, {
   ElementPlusResolver,
   VantResolver,
 } from 'unplugin-vue-components/resolvers';
+import path from 'path';
+import process from 'process';
+import fs from 'fs';
+
+const version = +new Date();
+
+function handleUpdateCache() {
+  return {
+    name: 'handleCache',
+    closeBundle() {
+      let currentPath = process.cwd();
+      let indexFiles = `index_${version}`;
+      let indexFiletypes = ['.js'];
+
+      indexFiletypes.forEach((type) => {
+        fs.copyFile(
+          `${currentPath}/dist/assets/${indexFiles}${type}`,
+          `${currentPath}/dist/assets/index${type}`,
+          (err) => {
+            if (err) throw err;
+            console.log(
+              `Custom handle event: ${currentPath}\\dist\\assets\\${indexFiles}${type} was copied to ${currentPath}\\dist\\assets\\index${type}`
+            );
+          }
+        );
+      });
+    },
+  };
+}
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -21,7 +50,22 @@ export default defineConfig({
         VantResolver(),
       ],
     }),
+    handleUpdateCache(),
   ],
+  build: {
+    manifest: false,
+    cssCodeSplit: false,
+    rollupOptions: {
+      input: {
+        index: path.resolve(__dirname, 'index.html'),
+      },
+      output: {
+        entryFileNames: `assets/[name]_${version}.js`,
+        chunkFileNames: `assets/[name]_${version}.js`,
+        assetFileNames: `assets/index.[ext]`,
+      },
+    },
+  },
 });
 
 // your plugin installation
