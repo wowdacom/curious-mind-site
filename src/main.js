@@ -1,5 +1,5 @@
 import { createApp } from 'vue';
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router';
 import App from './App.vue';
 import Home from './components/Home/Home.vue';
 import ArticleList from './components/Home/ArticleList.vue';
@@ -7,8 +7,8 @@ import Article from './components/Article.vue';
 import 'virtual:windi.css';
 
 const router = createRouter({
-  base: process.env.NODE_ENV !== 'production' ? './' : '/none-chinese-a-year/',
-  history: createWebHistory(),
+  base: './',
+  history: createWebHashHistory(),
   routes: [
     {
       path: '/',
