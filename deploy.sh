@@ -19,7 +19,9 @@ git commit -m 'deploy'
 # if you are deploying to https://<USERNAME>.github.io
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git main
 
+git remote add origin https://github.com/wowdacom/none-chinese-a-year.git
+
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
-# git push -f git@github.com:<USERNAME>/<REPO>.git main:gh-pages
+git push -f git@github.com:wowdacom/none-chinese-a-year.git main:gh-pages
 
 cd -
