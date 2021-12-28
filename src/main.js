@@ -7,6 +7,7 @@ import Article from './components/Article.vue';
 import 'virtual:windi.css';
 
 const router = createRouter({
+  base: process.env.NODE_ENV !== 'production' ? './' : '/none-chinese-a-year/',
   history: createWebHistory(),
   routes: [
     {
