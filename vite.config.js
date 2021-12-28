@@ -26,6 +26,7 @@ export default defineConfig({
         VantResolver(),
       ],
     }),
+    handleUpdateCache(),
   ],
   build: {
     manifest: false,
