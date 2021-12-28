@@ -20,6 +20,6 @@ git commit -m 'deploy'
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git main
 
 # if you are deploying to https://<USERNAME>.github.io/none-chinese-a-year
-# git push -f git@github.com:wowdacom/none-chinese-a-year.git main:gh-pages
+git push -f git@github.com:wowdacom/none-chinese-a-year.git main:gh-pages
 
 cd -

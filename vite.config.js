@@ -10,6 +10,7 @@ import ViteComponents, {
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/none-chinese-a-year/',
   plugins: [
     vue(),
     WindiCSS(),
