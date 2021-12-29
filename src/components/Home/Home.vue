@@ -8,6 +8,7 @@
 import { ref } from 'vue';
 import { db } from '../../config/firebaseConfig.js';
 import { doc, getDoc } from 'firebase/firestore';
+import process from 'process';
 
 export default {
   setup() {
