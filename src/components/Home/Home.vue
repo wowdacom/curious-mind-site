@@ -7,7 +7,7 @@
 <script>
 import { ref } from 'vue';
 import { db } from '../../config/firebaseConfig.js';
-import { doc, getDoc } from 'firebase/firestore';
+import { doc, getDoc, getDocs, collection } from 'firebase/firestore';
 import process from 'process';
 
 export default {
@@ -15,19 +15,16 @@ export default {
     const popArticles = ref([]);
     // Get a reference to the database service
 
-    const getPopularArticles = async () => {
+    const getArticlesList = async () => {
       const docRef = doc(db, 'article-lists', 'popular-article-lists');
-      const docSnap = await getDoc(docRef);
 
-      if (docSnap.exists()) {
-        for (const [key, value] of Object.entries(docSnap.data())) {
-          popArticles.value.push(value);
-        }
-      } else {
-        console.log('No such document!');
-      }
+      const querySnapshot = await getDocs(collection(db, 'article-lists'));
+      querySnapshot.forEach((doc) => {
+        popArticles.value.push(doc.data());
+      });
     };
-    getPopularArticles();
+
+    getArticlesList();
 
     return {
       popArticles,
