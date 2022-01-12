@@ -1,5 +1,9 @@
 <template>
-  <PopularArticles :pop-articles="popArticles"></PopularArticles>
+  <PopularArticles
+    v-if="popArticles.length"
+    :pop-articles="popArticles"
+  ></PopularArticles>
+  <PopularArticlesSkeleton v-else></PopularArticlesSkeleton>
   <ArticleList></ArticleList>
   <RelevantArticles></RelevantArticles>
 </template>

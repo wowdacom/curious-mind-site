@@ -8,12 +8,7 @@
           v-for="article in popArticles"
         >
           <div
-            class="
-              h-full
-              border-2 border-gray-200 border-opacity-60
-              rounded-lg
-              overflow-hidden
-            "
+            class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden"
           >
             <img
               class="lg:h-96 md:h-72 w-full object-cover object-center"
@@ -22,30 +17,19 @@
             />
             <div class="p-6">
               <h2
-                class="
-                  tracking-widest
-                  text-xs
-                  title-font
-                  font-medium
-                  text-gray-400
-                  mb-1
-                "
+                class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1"
               >
                 {{ article.category }}
               </h2>
               <h1 class="title-font text-lg font-medium text-gray-900 mb-3">
                 {{ article.title }}
               </h1>
-              <p class="leading-relaxed mb-3">{{ article.subtitle }}</p>
+              <p class="leading-relaxed mb-3 h-80px clamp">
+                {{ article.subtitle }}
+              </p>
               <div class="flex items-center flex-wrap">
                 <a
-                  class="
-                    text-indigo-500
-                    inline-flex
-                    items-center
-                    md:mb-2
-                    lg:mb-0
-                  "
+                  class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0"
                   >Learn More
                   <svg
                     class="w-4 h-4 ml-2"
@@ -61,20 +45,7 @@
                   </svg>
                 </a>
                 <span
-                  class="
-                    text-gray-400
-                    mr-3
-                    inline-flex
-                    items-center
-                    lg:ml-auto
-                    md:ml-0
-                    ml-auto
-                    leading-none
-                    text-sm
-                    pr-3
-                    py-1
-                    border-r-2 border-gray-200
-                  "
+                  class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200"
                 >
                   <svg
                     class="w-4 h-4 mr-1"
@@ -92,13 +63,7 @@
                   >1.2K
                 </span>
                 <span
-                  class="
-                    text-gray-400
-                    inline-flex
-                    items-center
-                    leading-none
-                    text-sm
-                  "
+                  class="text-gray-400 inline-flex items-center leading-none text-sm"
                 >
                   <svg
                     class="w-4 h-4 mr-1"
@@ -133,5 +98,12 @@ export default {
   setup(props) {},
 };
 </script>
-
-<style></style>
+<style>
+.clamp {
+  display: -webkit-box;
+  /* max-width: 200px; */
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+</style>
