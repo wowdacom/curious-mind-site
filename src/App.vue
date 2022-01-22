@@ -9,6 +9,7 @@
 <style>
 #app {
   background-image: url('./assets/p0435_s.png');
+  min-height: 100vh;
 }
 </style>
 <script>
