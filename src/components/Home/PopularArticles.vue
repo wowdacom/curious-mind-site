@@ -8,7 +8,7 @@
           v-for="article in popArticles"
         >
           <div
-            class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden"
+            class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden bg-white"
           >
             <img
               class="lg:h-96 md:h-72 w-full object-cover object-center"

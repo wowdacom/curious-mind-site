@@ -8,6 +8,7 @@
 
 <style>
 #app {
+  background-image: url('./assets/p0435_s.png');
 }
 </style>
 <script>
