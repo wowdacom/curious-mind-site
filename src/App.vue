@@ -22,7 +22,6 @@ export default {
     },
   },
   setup(props) {
-    console.log('hello');
     getCLS(console.log);
     getFID(console.log);
     getLCP(console.log);
