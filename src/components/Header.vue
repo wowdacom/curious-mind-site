@@ -14,7 +14,7 @@
         <router-link class="mr-5 hover:text-gray-900" to="/new"
           >Monthly Aritcle</router-link
         >
-        <router-link class="mr-5 hover:text-gray-900" to="/blog"
+        <router-link class="mr-5 hover:text-gray-900" to="/therapists"
           >Find a Therapist</router-link
         >
         <a class="mr-5 hover:text-gray-900">Psycho 101</a>

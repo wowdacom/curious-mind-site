@@ -2,10 +2,12 @@ import { createApp } from 'vue';
 import { createRouter, createWebHashHistory } from 'vue-router';
 import App from './App.vue';
 import Home from './components/Home/Home.vue';
+import TherapistsList from './components/Home/TherapistsList.vue';
 import ArticleList from './components/Home/ArticleList.vue';
 import Article from './components/Article.vue';
 import About from './components/About.vue';
 import 'virtual:windi.css';
+import 'leaflet/dist/leaflet.css';
 
 const router = createRouter({
   base: './',
@@ -15,6 +17,11 @@ const router = createRouter({
       path: '/',
       name: 'Home',
       component: Home,
+    },
+    {
+      path: '/therapists/',
+      name: 'Therapists',
+      component: TherapistsList,
     },
     {
       path: '/blog/',
