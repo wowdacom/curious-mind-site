@@ -50,6 +50,7 @@
 
 <script>
 import L from 'leaflet';
+import markerIcon from 'leaflet/dist/images/marker-icon.png';
 import { onMounted } from 'vue';
 export default {
   props: {},
@@ -73,7 +74,11 @@ export default {
         }
       ).addTo(map);
 
-      var marker = L.marker([25.02723496647927, 121.52784880738527]).addTo(map);
+      var marker = L.marker([25.02723496647927, 121.52784880738527], {
+        icon: L.icon({
+          iconUrl: markerIcon,
+        }),
+      }).addTo(map);
     });
   },
 };

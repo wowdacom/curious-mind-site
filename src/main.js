@@ -7,7 +7,7 @@ import ArticleList from './components/Home/ArticleList.vue';
 import Article from './components/Article.vue';
 import About from './components/About.vue';
 import 'virtual:windi.css';
-import 'leaflet/dist/leaflet.css';
+import '@/../node_modules/leaflet/dist/leaflet.css';
 
 const router = createRouter({
   base: './',
