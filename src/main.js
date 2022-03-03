@@ -3,6 +3,7 @@ import { createRouter, createWebHashHistory } from 'vue-router';
 import App from './App.vue';
 import Home from './components/Home/Home.vue';
 import TherapistsList from './components/Home/TherapistsList.vue';
+import ProjectList from './components/Home/ProjectList.vue';
 import ArticleList from './components/Home/ArticleList.vue';
 import Article from './components/Article.vue';
 import About from './components/About.vue';
@@ -23,6 +24,12 @@ const router = createRouter({
       name: 'Therapists',
       component: TherapistsList,
     },
+    {
+      path: '/project/',
+      name: 'Project',
+      component: ProjectList,
+    },
+
     {
       path: '/blog/',
       name: 'BlogList',
