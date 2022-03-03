@@ -16,7 +16,7 @@
       }"
     >
       <li
-        v-for="(list, i) in lists"
+        v-for="list in lists"
         :key="list"
         class="w-[245px] h-[245px] flex-shrink-0 border border-solid border-gray-500 text-center"
       >

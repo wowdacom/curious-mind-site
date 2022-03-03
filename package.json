@@ -17,6 +17,7 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.0.0",
     "sass": "^1.49.8",
+    "@windicss/plugin-animations": "^1.0.9",
     "unplugin-vue-components": "^0.17.9",
     "vite": "^2.7.2",
     "vite-plugin-windicss": "^1.6.1",

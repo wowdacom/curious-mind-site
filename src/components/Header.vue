@@ -17,8 +17,8 @@
         <router-link class="mr-5 hover:text-gray-900" to="/therapists"
           >Find a Therapist</router-link
         >
-        <router-link class="mr-5 hover:text-gray-900" to="/psycho-study"
-          >Psycho 101</router-link
+        <router-link class="mr-5 hover:text-gray-900" to="/project"
+          >Happiness Project</router-link
         >
         <a class="mr-5 hover:text-gray-900">FE Tech</a>
       </nav>

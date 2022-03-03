@@ -3,9 +3,9 @@ import { createRouter, createWebHashHistory } from "vue-router";
 import App from "./App.vue";
 import Home from "./components/Home/Home.vue";
 import TherapistsList from "./components/Home/TherapistsList.vue";
+import ProjectList from "./components/Home/ProjectList.vue";
 import ArticleList from "./components/Home/ArticleList.vue";
 import Article from "./components/Article.vue";
-import PsychoStudy from "./components/PsychoStudy.vue";
 import About from "./components/About.vue";
 import "virtual:windi.css";
 import "@/../node_modules/leaflet/dist/leaflet.css";
@@ -25,6 +25,11 @@ const router = createRouter({
       component: TherapistsList,
     },
     {
+      path: "/project/",
+      name: "Project",
+      component: ProjectList,
+    },
+    {
       path: "/blog/",
       name: "BlogList",
       component: ArticleList,
@@ -38,11 +43,6 @@ const router = createRouter({
       path: "/about",
       name: "About",
       component: About,
-    },
-    {
-      path: "/psycho-study",
-      name: "PsychoStudy",
-      component: PsychoStudy,
     },
   ],
 });
