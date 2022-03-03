@@ -11,13 +11,15 @@
       <nav
         class="md:ml-auto flex flex-wrap items-center text-base justify-center"
       >
-        <router-link class="mr-5 hover:text-gray-900" to="/new"
+        <router-link class="mr-5 hover:text-gray-900" to="/blog"
           >Monthly Aritcle</router-link
         >
         <router-link class="mr-5 hover:text-gray-900" to="/therapists"
           >Find a Therapist</router-link
         >
-        <a class="mr-5 hover:text-gray-900">Psycho 101</a>
+        <router-link class="mr-5 hover:text-gray-900" to="/psycho-study"
+          >Psycho 101</router-link
+        >
         <a class="mr-5 hover:text-gray-900">FE Tech</a>
       </nav>
       <router-link
@@ -39,7 +41,7 @@
 </template>
 
 <script>
-import Logo from '@/components/Other/Logo.vue';
+import Logo from "@/components/Other/Logo.vue";
 export default {
   components: {
     Logo,
