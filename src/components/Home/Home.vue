@@ -1,4 +1,5 @@
 <template>
+  <Banner></Banner>
   <PopularArticles
     v-if="popArticles.length"
     :pop-articles="popArticles"
