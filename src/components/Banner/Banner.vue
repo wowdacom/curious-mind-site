@@ -12,7 +12,7 @@
           src="https://i.imgur.com/bqLyvxa.png"
           alt=""
         />
-        <div class="absolute right-[25px] bottom-[10px] animate-swing w-[50px]">
+        <div class="absolute right-[40px] bottom-[20px] hinge w-[50px]">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
             <!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
             <path
@@ -30,10 +30,35 @@ export default {};
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Rock+3D&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rock+3D&display=swap");
 
 .container {
   padding-top: 10%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
-  font-family: 'Rock 3D', cursive;
+  font-family: "Rock 3D", cursive;
+}
+
+@keyframes hinge {
+  0% {
+    animation-timing-function: ease-in-out;
+  }
+
+  20%,
+  60%,
+  80% {
+    transform: rotate3d(0, 0, 1, 80deg);
+    animation-timing-function: ease-in-out;
+  }
+
+  40%,
+  70% {
+    transform: rotate3d(0, 0, 1, 60deg);
+    animation-timing-function: ease-in-out;
+    opacity: 1;
+  }
+}
+
+.hinge {
+  animation: hinge 3s infinite;
+  transform-origin: 50% 50%;
 }
 </style>
