@@ -4,6 +4,7 @@ import App from './App.vue';
 import Home from './components/Home/Home.vue';
 import TherapistsList from './components/Home/TherapistsList.vue';
 import ProjectList from './components/Home/ProjectList.vue';
+import Tests from './components/Home/TestsList.vue';
 import ArticleList from './components/Home/ArticleList.vue';
 import Article from './components/Article.vue';
 import About from './components/About.vue';
@@ -29,7 +30,11 @@ const router = createRouter({
       name: 'Project',
       component: ProjectList,
     },
-
+    {
+      path: '/tests/',
+      name: 'Tests',
+      component: Tests,
+    },
     {
       path: '/blog/',
       name: 'BlogList',

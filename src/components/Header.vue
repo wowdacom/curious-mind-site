@@ -11,31 +11,32 @@
       <nav
         class="md:ml-auto flex flex-wrap items-center text-base justify-center"
       >
+        <router-link class="mr-5 hover:text-gray-900" to="/project"
+          >Happiness Project</router-link
+        >
+        <router-link class="mr-5 hover:text-gray-900" to="/tests"
+          >Personality Tests</router-link
+        >
         <router-link class="mr-5 hover:text-gray-900" to="/new"
           >Monthly Aritcle</router-link
         >
         <router-link class="mr-5 hover:text-gray-900" to="/therapists"
           >Find a Therapist</router-link
         >
-        <router-link class="mr-5 hover:text-gray-900" to="/project"
-          >Happiness Project</router-link
-        >
-        <a class="mr-5 hover:text-gray-900">FE Tech</a>
+        <div class="mr-5 inline-block hover:text-gray-900">
+          More<svg
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            class="w-4 h-4 ml-1"
+            viewBox="0 0 24 24"
+          >
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </div>
       </nav>
-      <router-link
-        class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
-        to="/about"
-        >About Plan<svg
-          fill="none"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          class="w-4 h-4 ml-1"
-          viewBox="0 0 24 24"
-        >
-          <path d="M5 12h14M12 5l7 7-7 7"></path></svg
-      ></router-link>
     </div>
   </header>
 </template>
