@@ -24,7 +24,7 @@ export default {
       canvas.width = Math.round((vwWidth * percent) / 100);
       canvas.height = Math.round((vwHeight * percent * 6) / 100);
 
-      let shift = (positionX * 100) % canvas.width;
+      let shift = positionX * canvas.width;
       console.log(shift);
 
       if (canvas.getContext) {
@@ -40,7 +40,7 @@ export default {
 
     const handleScroll = () => {
       let y = window.scrollY;
-      let x = (y * Math.PI) / 180;
+      let x = Math.sin((y * Math.PI) / 180);
       draw(x, y);
     };
 
