@@ -16,9 +16,16 @@ import { onMounted } from 'vue';
 
 export default {
   setup() {
+    const vw = reactive({
+      canvas: null,
+      ctx: null,
+      width: window.innerWidth,
+      height: window.innerHeight,
+      percent: 100,
+    });
     const box1 = reactive({
-      x: 0,
-      y: 0,
+      x: 50,
+      y: 50,
       styles: [
         '#000000',
         '#808080',
@@ -29,8 +36,8 @@ export default {
       ],
     });
     const box2 = reactive({
-      x: 10,
-      y: 10,
+      x: 100,
+      y: 100,
       styles: [
         '#CC99FF',
         '#A9D1F7',
@@ -41,36 +48,59 @@ export default {
       ],
     });
 
+    const canvasInit = () => {
+      vw.canvas = document.getElementById('canvasBackground');
+      vw.ctx = vw.canvas.getContext('2d');
+
+      vw.canvas.width = Math.round((vw.width * vw.percent) / 100);
+      vw.canvas.height = Math.round((vw.height * vw.percent * 6) / 100);
+    };
+
     const draw = (step) => {
-      console.log(step);
-      let canvas = document.getElementById('canvasBackground');
-      const vwWidth = window.innerWidth,
-        vwHeight = window.innerHeight,
-        percent = 100;
-
-      canvas.width = Math.round((vwWidth * percent) / 100);
-      canvas.height = Math.round((vwHeight * percent * 6) / 100);
-
-      if (canvas.getContext) {
-        var ctx = canvas.getContext('2d');
-
-        ctx.fillStyle = box1.styles[step];
-        ctx.fillRect(box1.x, box1.y, 100, 100);
-
-        ctx.fillStyle = box2.styles[step];
-        ctx.fillRect(box2.x, box2.y, 100, 100);
+      if (vw.canvas.getContext) {
+        vw.ctx.clearRect(0, 0, vw.canvas.width, vw.canvas.height);
+        if (step % 2 === 0) {
+          drawBox(box1.x, box1.y, box1.styles[step], 100);
+          drawBox(box2.x, box2.y, box2.styles[step], 100);
+        } else {
+          drawBox(box2.x, box2.y, box2.styles[step], 100);
+          drawBox(box1.x, box1.y, box1.styles[step], 100);
+        }
+        drawText(vw.canvas.width / 3 + box1.x, 100 + box1.y, 100);
+        drawText(vw.canvas.width / 4 + box1.x, 500 + box1.y, 30);
       }
+    };
+
+    const drawBox = (x, y, style, size) => {
+      vw.ctx.fillStyle = style;
+      vw.ctx.fillRect(x, y, size, size);
+    };
+
+    const drawText = (x, y, size = 12) => {
+      let txt = 'Sample String';
+
+      vw.ctx.save();
+      vw.ctx.fillStyle = '#FFBD33';
+      vw.ctx.font = `${size}px Arial`;
+
+      let textW = vw.ctx.measureText(txt).width;
+      vw.ctx.translate((x + textW) / 2, y);
+      vw.ctx.rotate((y * Math.PI) / 180);
+      vw.ctx.translate(-(x + textW) / 2, -y);
+
+      vw.ctx.fillText(txt, x, y);
+      vw.ctx.restore();
     };
 
     const handleScroll = () => {
       let y = window.scrollY;
       let x = Math.sin((y * Math.PI) / 180);
-      box1.x = 0;
-      box1.y = y;
+      box1.x = 50;
+      box1.y = 50 + y;
 
-      box2.x = 10;
-      box2.y = 10 + y;
-      let step = getStep(y);
+      box2.x = 100;
+      box2.y = 100 + y;
+      let step = getStep(box1.y);
       draw(step);
     };
 
@@ -88,7 +118,6 @@ export default {
     };
 
     const getStep = (y = 0) => {
-      console.log(y);
       let currentSection = ranges.value.filter(
         (item) => item.start <= y && y <= item.end
       );
@@ -97,6 +126,7 @@ export default {
     };
 
     onMounted(() => {
+      canvasInit();
       document.addEventListener('scroll', handleScroll);
       getBoxRange();
       let step = getStep(window.scrollY);
@@ -113,7 +143,6 @@ export default {
 .month {
   width: 100%;
   height: 100vh;
-  border: solid 1px red;
   display: flex;
   justify-content: center;
   align-items: center;

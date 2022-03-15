@@ -22,9 +22,9 @@ export default {
     },
   },
   setup(props) {
-    getCLS(console.log);
-    getFID(console.log);
-    getLCP(console.log);
+    // getCLS(console.log);
+    // getFID(console.log);
+    // getLCP(console.log);
   },
 };
 </script>
