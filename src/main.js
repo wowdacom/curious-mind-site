@@ -1,13 +1,15 @@
 import { createApp } from 'vue';
 import { createRouter, createWebHashHistory } from 'vue-router';
 import App from './App.vue';
-import Home from './components/Home/Home.vue';
-import TherapistsList from './components/Home/TherapistsList.vue';
-import ProjectList from './components/Home/ProjectList.vue';
-import Tests from './components/Home/TestsList.vue';
-import ArticleList from './components/Home/ArticleList.vue';
-import Article from './components/Article.vue';
-import About from './components/About.vue';
+
+import Home from './components/Pages/Home.vue';
+import FindTherapists from './components/Pages/FindTherapists.vue';
+import HappinessProject from './components/Pages/HappinessProject.vue';
+import MentalGadget from './components/Pages/MentalGadget.vue';
+import ArticleList from './components/Pages/ArticleList.vue';
+import SingleArticle from './components/Pages/Article.vue';
+import About from './components/Pages/About.vue';
+
 import 'virtual:windi.css';
 import '@/../node_modules/leaflet/dist/leaflet.css';
 
@@ -23,27 +25,27 @@ const router = createRouter({
     {
       path: '/therapists/',
       name: 'Therapists',
-      component: TherapistsList,
+      component: FindTherapists,
     },
     {
       path: '/project/',
       name: 'Project',
-      component: ProjectList,
+      component: HappinessProject,
     },
     {
-      path: '/tests/',
-      name: 'Tests',
-      component: Tests,
+      path: '/gadgets/',
+      name: 'Gadgets',
+      component: MentalGadget,
     },
     {
-      path: '/blog/',
-      name: 'BlogList',
+      path: '/articles/',
+      name: 'ArticleList',
       component: ArticleList,
     },
     {
-      path: '/blog/:title',
-      name: 'Blog',
-      component: Article,
+      path: '/articles/:title',
+      name: 'Article',
+      component: SingleArticle,
     },
     {
       path: '/about',
