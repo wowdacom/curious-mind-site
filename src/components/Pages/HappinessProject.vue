@@ -178,7 +178,7 @@ export default {
         drawCircle(
           x + moveX,
           y + moveY,
-          `rgba(255,189,51, ${
+          `rgba(184, 209, 240, ${
             ((radius - 50) * 1) / 20 < 1
               ? 1 - (((radius - 50) * 1) / 20) * -1
               : 1 - ((radius - 50) * 1) / 20
@@ -199,6 +199,8 @@ export default {
       vw.ctx.beginPath();
       vw.ctx.arc(x, y, size, 0, Math.PI * 2);
       vw.ctx.fillStyle = style;
+      vw.ctx.shadowColor = style;
+      vw.ctx.shadowBlur = (1 / size) * 50;
       vw.ctx.fill();
       vw.ctx.closePath();
     };
