@@ -118,7 +118,7 @@ export default {
     };
 
     const drawGalleryOne = () => {
-      let fpsInterval = 5;
+      let fpsInterval = 7;
       let current = 0;
       let sizeRange = [40, 60];
       let currentSize = sizeRange[0];
@@ -140,6 +140,7 @@ export default {
           }
 
           vw.ctx.clearRect(0, 0, vw.canvas.width, vw.canvas.height);
+
           drawPolygons(
             gallery1CenterX,
             gallery1CenterY,
@@ -153,7 +154,6 @@ export default {
         } else {
           current++;
         }
-        console.log(current);
 
         if (isBreathing.value) {
           window.requestAnimationFrame(step);
@@ -175,7 +175,16 @@ export default {
         moveX = Math.cos(actAngle) * radius;
         moveY = Math.sin(actAngle) * radius;
         // ctx.lineTo(x + moveX, y + moveY);
-        drawCircle(x + moveX, y + moveY, '#FFBD33', 5);
+        drawCircle(
+          x + moveX,
+          y + moveY,
+          `rgba(255,189,51, ${
+            ((radius - 50) * 1) / 20 < 1
+              ? 1 - (((radius - 50) * 1) / 20) * -1
+              : 1 - ((radius - 50) * 1) / 20
+          } )`,
+          5
+        );
       }
 
       // 畫外接圓
