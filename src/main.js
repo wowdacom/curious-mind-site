@@ -7,7 +7,7 @@ import FindTherapists from './components/Pages/FindTherapists.vue';
 import HappinessProject from './components/Pages/HappinessProject.vue';
 import MentalGadget from './components/Pages/MentalGadget.vue';
 import ArticleList from './components/Pages/ArticleList.vue';
-import SingleArticle from './components/Pages/Article.vue';
+// import SingleArticle from './components/Pages/Article.vue';
 import About from './components/Pages/About.vue';
 
 import 'virtual:windi.css';
@@ -42,11 +42,11 @@ const router = createRouter({
       name: 'ArticleList',
       component: ArticleList,
     },
-    {
-      path: '/articles/:title',
-      name: 'Article',
-      component: SingleArticle,
-    },
+    // {
+    //   path: '/articles/:title',
+    //   name: 'Article',
+    //   component: SingleArticle,
+    // },
     {
       path: '/about',
       name: 'About',

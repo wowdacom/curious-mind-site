@@ -2,7 +2,7 @@
   <div class="text-gray-600 body-font relative">
     <canvas id="canvasBackground"></canvas>
     <section class="month month1">
-      1 <button class="btn btn1" @click="handleGetBall(0)">球球來我這1</button>
+      <March></March>
     </section>
     <section class="month month2">
       2 <button class="btn btn2" @click="handleGetBall(1)">球球來我這2</button>
@@ -25,8 +25,12 @@
 <script>
 import { reactive, ref } from 'vue';
 import { onMounted } from 'vue';
+import March from '../HappinessProject/March.vue';
 
 export default {
+  components: {
+    March,
+  },
   setup() {
     const vw = reactive({
       canvas: null,
@@ -73,6 +77,7 @@ export default {
       step: 0,
     });
     const isInit = ref(false);
+    const isBreathing = ref(false);
 
     const canvasInit = () => {
       isInit.value = true;
@@ -104,7 +109,89 @@ export default {
         }
         drawText(vw.canvas.width / 3 + box1.x, 100 + box1.y, 100);
         drawText(vw.canvas.width / 4 + box1.x, 500 + box1.y, 30);
+
+        if (!isBreathing.value) {
+          drawGalleryOne();
+          isBreathing.value = true;
+        }
       }
+    };
+
+    const drawGalleryOne = () => {
+      let fpsInterval = 5;
+      let current = 0;
+      let sizeRange = [40, 60];
+      let currentSize = sizeRange[0];
+      let diraction = 1;
+      let gallery1 = document.querySelector('.gallery-one');
+      let gallery1CenterY =
+        gallery1.offsetTop - vw.canvas.offsetTop + gallery1.offsetHeight / 2;
+      let gallery1CenterX =
+        gallery1.offsetLeft - vw.canvas.offsetTop + gallery1.offsetWidth / 2;
+
+      function step(fps) {
+        if (current === 0) {
+          if (diraction === 1 && currentSize <= sizeRange[1]) {
+            currentSize += 2;
+          } else if (diraction === -1 && currentSize >= sizeRange[0]) {
+            currentSize -= 2;
+          } else {
+            diraction = diraction * -1;
+          }
+
+          vw.ctx.clearRect(0, 0, vw.canvas.width, vw.canvas.height);
+          drawPolygons(
+            gallery1CenterX,
+            gallery1CenterY,
+            16,
+            currentSize,
+            false
+          );
+          current++;
+        } else if (current === fpsInterval) {
+          current = 0;
+        } else {
+          current++;
+        }
+        console.log(current);
+
+        if (isBreathing.value) {
+          window.requestAnimationFrame(step);
+        }
+      }
+      window.requestAnimationFrame(step);
+    };
+
+    const drawPolygons = (x, y, num, radius, arc) => {
+      // 先清Canvas畫布,w為Canvas寬度,h為Canvas高度
+      let angle = ((360 / num) * (0 + 1) * Math.PI) / 180;
+      let actAngle = angle - Math.PI / 2;
+      let moveX = Math.cos(actAngle) * radius;
+      let moveY = Math.sin(actAngle) * radius;
+      vw.ctx.moveTo(x + moveX, y + moveY);
+      for (var i = 0; i < num; i++) {
+        angle = ((360 / num) * (i + 1) * Math.PI) / 180;
+        actAngle = angle - Math.PI / 2;
+        moveX = Math.cos(actAngle) * radius;
+        moveY = Math.sin(actAngle) * radius;
+        // ctx.lineTo(x + moveX, y + moveY);
+        drawCircle(x + moveX, y + moveY, '#FFBD33', 5);
+      }
+
+      // 畫外接圓
+      if (arc) {
+        vw.ctx.beginPath();
+        vw.ctx.arc(x, y, radius, 0, 2 * Math.PI, true);
+        vw.ctx.stroke();
+      }
+    };
+
+    const drawCircle = (x, y, style, size) => {
+      vw.ctx.beginPath();
+      vw.ctx.arc(x, y, size, 0, Math.PI * 2);
+      vw.ctx.fillStyle = style;
+      vw.ctx.fill();
+      vw.ctx.closePath();
     };
 
     const drawBox = (x, y, style, size) => {
@@ -257,7 +344,6 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 100px;
   z-index: 2;
 }
 .btn {
