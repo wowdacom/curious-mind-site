@@ -97,18 +97,18 @@ export default {
     const draw = () => {
       let step = getStep(box1.y);
       if (vw.canvas.getContext) {
-        vw.ctx.clearRect(0, 0, vw.canvas.width, vw.canvas.height);
+        // vw.ctx.clearRect(0, 0, vw.canvas.width, vw.canvas.height);
 
-        drawArc(vw.canvas.width / 2, ball.y);
-        if (step % 2 === 0) {
-          drawBox(box1.x, box1.y, box1.styles[step], 100);
-          drawBox(box2.x, box2.y, box2.styles[step], 100);
-        } else {
-          drawBox(box2.x, box2.y, box2.styles[step], 100);
-          drawBox(box1.x, box1.y, box1.styles[step], 100);
-        }
-        drawText(vw.canvas.width / 3 + box1.x, 100 + box1.y, 100);
-        drawText(vw.canvas.width / 4 + box1.x, 500 + box1.y, 30);
+        // drawArc(vw.canvas.width / 2, ball.y);
+        // if (step % 2 === 0) {
+        //   drawBox(box1.x, box1.y, box1.styles[step], 100);
+        //   drawBox(box2.x, box2.y, box2.styles[step], 100);
+        // } else {
+        //   drawBox(box2.x, box2.y, box2.styles[step], 100);
+        //   drawBox(box1.x, box1.y, box1.styles[step], 100);
+        // }
+        // drawText(vw.canvas.width / 3 + box1.x, 100 + box1.y, 100);
+        // drawText(vw.canvas.width / 4 + box1.x, 500 + box1.y, 30);
 
         if (!isBreathing.value) {
           drawGalleryOne();
@@ -323,7 +323,7 @@ export default {
       getBoxRange();
       getButtenRange();
       canvasInit();
-      document.addEventListener('scroll', handleScroll);
+      // document.addEventListener('scroll', handleScroll);
     });
 
     return {

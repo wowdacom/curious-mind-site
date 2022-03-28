@@ -3,46 +3,45 @@
     <div class="container px-5 py-24 mx-auto">
       <div class="lg:w-4/5 mx-auto flex flex-wrap">
         <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
-          <h2 class="text-sm title-font text-gray-500 tracking-widest">
-            BRAND NAME
-          </h2>
+          <h2 class="text-sm title-font text-gray-500 tracking-widest">三月</h2>
           <h1 class="text-gray-900 text-3xl title-font font-medium mb-4">
-            Animated Night Hill Illustrations
+            沒事，多呼吸 March
           </h1>
           <div class="flex mb-4">
             <a
               class="flex-grow text-indigo-500 border-b-2 border-indigo-500 py-2 text-lg px-1"
-              >Description</a
+              >關於</a
             >
             <a class="flex-grow border-b-2 border-gray-300 py-2 text-lg px-1"
-              >Reviews</a
+              >實作紀錄</a
             >
             <a class="flex-grow border-b-2 border-gray-300 py-2 text-lg px-1"
-              >Details</a
+              >心得</a
             >
           </div>
           <p class="leading-relaxed mb-4">
-            Fam locavore kickstarter distillery. Mixtape chillwave tumeric
-            sriracha taximy chia microdosing tilde DIY. XOXO fam inxigo
-            juiceramps cornhole raw denim forage brooklyn. Everyday carry +1
-            seitan poutine tumeric. Gastropub blue bottle austin listicle
-            pour-over, neutra jean.
+            我會像青草一樣呼吸/在很高的河岸上/腳下的水淵深不可測/黑得像一種鲇魚的脊背/遠處的河水漸漸透明/一直漂向對岸的沙地
+            /那里的起伏充滿誘惑 /困倦的陽光正在休息 /再遠處是一片綠光閃閃的樹林
+            /錄下了風的一舉一動 /在風中總有些可愛的小花 /從沒有系緊紫色的頭巾
+            /螞蟻們在搬運沙土 /絕不會因為愛情而苦惱 /自在的野蜂卻在歌唱
+            /把一支歌獻給所有花朵 /我會呼吸得像青草一樣 /把輕輕的夢想告訴春天
+            /我希望會唱許多歌曲 /讓唯一的微笑永不消失
           </p>
           <div class="flex border-t border-gray-200 py-2">
-            <span class="text-gray-500">Color</span>
+            <span class="text-gray-500">餅乾呼吸法</span>
             <span class="ml-auto text-gray-900">Blue</span>
           </div>
           <div class="flex border-t border-gray-200 py-2">
-            <span class="text-gray-500">Size</span>
+            <span class="text-gray-500">慢跑</span>
             <span class="ml-auto text-gray-900">Medium</span>
           </div>
           <div class="flex border-t border-b mb-6 border-gray-200 py-2">
-            <span class="text-gray-500">Quantity</span>
+            <span class="text-gray-500">森林浴</span>
             <span class="ml-auto text-gray-900">4</span>
           </div>
           <div class="flex">
             <span class="title-font font-medium text-2xl text-gray-900"
-              >$58.00</span
+              >更多</span
             >
             <button
               class="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded"
