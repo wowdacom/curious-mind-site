@@ -1,6 +1,6 @@
 <template>
   <div class="text-gray-600 body-font relative">
-    <canvas id="canvasBackground"></canvas>
+    <div id="svgBackground"></div>
     <section class="month month1">
       <March></March>
     </section>
@@ -24,6 +24,7 @@
 
 <script>
 import { reactive, ref } from 'vue';
+import * as d3 from 'd3';
 import { onMounted } from 'vue';
 import March from '../HappinessProject/March.vue';
 
@@ -32,320 +33,100 @@ export default {
     March,
   },
   setup() {
-    const vw = reactive({
-      canvas: null,
-      ctx: null,
-      width: window.innerWidth,
-      height: window.innerHeight,
-      percent: 100,
-    });
-    const box1 = reactive({
-      x: 50,
-      y: 50,
-      styles: [
-        '#000000',
-        '#808080',
-        '#C0C0C0',
-        '#DCDCDC',
-        '#FFFFFF',
-        '#FFFAFA',
-      ],
-    });
-    const box2 = reactive({
-      x: 100,
-      y: 100,
-      styles: [
-        '#CC99FF',
-        '#A9D1F7',
-        '#B4F0A7',
-        '#FFFFBF',
-        '#FFDFBE',
-        '#FFB1B0',
-      ],
-    });
-    const ball = reactive({
-      x: 0,
-      y: 0,
-      styles: [
-        '#CC99FF',
-        '#A9D1F7',
-        '#B4F0A7',
-        '#FFFFBF',
-        '#FFDFBE',
-        '#FFB1B0',
-      ],
-      step: 0,
-    });
-    const isInit = ref(false);
-    const isBreathing = ref(false);
+    const width = ref(0);
+    const height = ref(0);
+    const svg = ref(null);
+    const rects = ref(null);
 
-    const canvasInit = () => {
-      isInit.value = true;
-      vw.canvas = document.getElementById('canvasBackground');
-      vw.ctx = vw.canvas.getContext('2d');
+    const initSvgBG = () => {
+      svg.value = d3
+        .select('.gallery-one')
+        .append('svg')
+        .attr('width', width.value)
+        .attr('height', height.value);
 
-      vw.canvas.width = Math.round((vw.width * vw.percent) / 100);
-      vw.canvas.height = Math.round((vw.height * vw.percent * 6) / 100);
+      console.log(svg.value);
 
-      ball.y = btnRanges.value[ball.step].start + 88;
-
-      draw();
-
-      isInit.value = false;
+      drawCircle();
+      d3.timer(animate);
     };
 
-    const draw = () => {
-      let step = getStep(box1.y);
-      if (vw.canvas.getContext) {
-        // vw.ctx.clearRect(0, 0, vw.canvas.width, vw.canvas.height);
+    const drawCircle = () => {
+      var rect_data = [
+        {
+          x: width.value / 2,
+          y: height.value / 2,
+          x_diff: Math.random() < 0.5 ? 1 : -1,
+          y_diff: Math.random() < 0.5 ? 1 : -1,
+          speed: Math.random() * 5,
+          width: 50,
+          height: 50,
+        },
+      ];
 
-        // drawArc(vw.canvas.width / 2, ball.y);
-        // if (step % 2 === 0) {
-        //   drawBox(box1.x, box1.y, box1.styles[step], 100);
-        //   drawBox(box2.x, box2.y, box2.styles[step], 100);
-        // } else {
-        //   drawBox(box2.x, box2.y, box2.styles[step], 100);
-        //   drawBox(box1.x, box1.y, box1.styles[step], 100);
-        // }
-        // drawText(vw.canvas.width / 3 + box1.x, 100 + box1.y, 100);
-        // drawText(vw.canvas.width / 4 + box1.x, 500 + box1.y, 30);
-
-        if (!isBreathing.value) {
-          drawGalleryOne();
-          isBreathing.value = true;
-        }
-      }
+      rects.value = svg.value
+        .selectAll('.rect')
+        .data(rect_data)
+        .enter()
+        .append('rect')
+        .attr('x', function (d) {
+          console.log(d);
+          return d.x - d.width / 2;
+        })
+        .attr('y', function (d) {
+          return d.y - d.height / 2;
+        })
+        .attr('rx', function (d) {
+          return d.width > d.height ? d.height / 2 : d.width / 2;
+        })
+        .attr('ry', function (d) {
+          return d.width > d.height ? d.height / 2 : d.width / 2;
+        })
+        .attr('width', function (d) {
+          console.log(d);
+          return d.width;
+        })
+        .attr('height', function (d) {
+          return d.height;
+        })
+        .attr('fill', 'red');
     };
 
-    const drawGalleryOne = () => {
-      let fpsInterval = 7;
-      let current = 0;
-      let sizeRange = [40, 60];
-      let currentSize = sizeRange[0];
-      let diraction = 1;
-      let gallery1 = document.querySelector('.gallery-one');
-      let gallery1CenterY =
-        gallery1.offsetTop - vw.canvas.offsetTop + gallery1.offsetHeight / 2;
-      let gallery1CenterX =
-        gallery1.offsetLeft - vw.canvas.offsetTop + gallery1.offsetWidth / 2;
+    const animate = (elapsed) => {
+      rects.value
+        .attr('x', function (d) {
+          d.x = d.x + d.speed * d.x_diff;
 
-      function step(fps) {
-        if (current === 0) {
-          if (diraction === 1 && currentSize <= sizeRange[1]) {
-            currentSize += 2;
-          } else if (diraction === -1 && currentSize >= sizeRange[0]) {
-            currentSize -= 2;
-          } else {
-            diraction = diraction * -1;
+          if (d.x <= 0 || d.x >= width.value - d.width) {
+            d.x_diff = d.x_diff * -1;
           }
 
-          vw.ctx.clearRect(0, 0, vw.canvas.width, vw.canvas.height);
+          return d.x;
+        })
+        .attr('y', function (d) {
+          d.y = d.y + d.speed * d.y_diff;
 
-          drawPolygons(
-            gallery1CenterX,
-            gallery1CenterY,
-            16,
-            currentSize,
-            false
-          );
-          current++;
-        } else if (current === fpsInterval) {
-          current = 0;
-        } else {
-          current++;
-        }
-
-        if (isBreathing.value) {
-          window.requestAnimationFrame(step);
-        }
-      }
-      window.requestAnimationFrame(step);
-    };
-
-    const drawPolygons = (x, y, num, radius, arc) => {
-      // 先清Canvas畫布,w為Canvas寬度,h為Canvas高度
-      let angle = ((360 / num) * (0 + 1) * Math.PI) / 180;
-      let actAngle = angle - Math.PI / 2;
-      let moveX = Math.cos(actAngle) * radius;
-      let moveY = Math.sin(actAngle) * radius;
-      vw.ctx.moveTo(x + moveX, y + moveY);
-      for (var i = 0; i < num; i++) {
-        angle = ((360 / num) * (i + 1) * Math.PI) / 180;
-        actAngle = angle - Math.PI / 2;
-        moveX = Math.cos(actAngle) * radius;
-        moveY = Math.sin(actAngle) * radius;
-        // ctx.lineTo(x + moveX, y + moveY);
-        drawCircle(
-          x + moveX,
-          y + moveY,
-          `rgba(184, 209, 240, ${
-            ((radius - 50) * 1) / 20 < 1
-              ? 1 - (((radius - 50) * 1) / 20) * -1
-              : 1 - ((radius - 50) * 1) / 20
-          } )`,
-          5
-        );
-      }
-
-      // 畫外接圓
-      if (arc) {
-        vw.ctx.beginPath();
-        vw.ctx.arc(x, y, radius, 0, 2 * Math.PI, true);
-        vw.ctx.stroke();
-      }
-    };
-
-    const drawCircle = (x, y, style, size) => {
-      vw.ctx.beginPath();
-      vw.ctx.arc(x, y, size, 0, Math.PI * 2);
-      vw.ctx.fillStyle = style;
-      vw.ctx.shadowColor = style;
-      vw.ctx.shadowBlur = (1 / size) * 50;
-      vw.ctx.fill();
-      vw.ctx.closePath();
-    };
-
-    const drawBox = (x, y, style, size) => {
-      vw.ctx.fillStyle = style;
-      vw.ctx.fillRect(x, y, size, size);
-    };
-
-    const drawText = (x, y, size = 12) => {
-      let txt = 'Sample String';
-
-      vw.ctx.save();
-      vw.ctx.fillStyle = '#FFBD33';
-      vw.ctx.font = `${size}px Arial`;
-
-      let textW = vw.ctx.measureText(txt).width;
-      vw.ctx.translate((x + textW) / 2, y);
-      vw.ctx.rotate((y * Math.PI) / 180);
-      vw.ctx.translate(-(x + textW) / 2, -y);
-
-      vw.ctx.fillText(txt, x, y);
-      vw.ctx.restore();
-    };
-
-    const drawArc = (x, y, size = 50) => {
-      vw.ctx.save();
-      vw.ctx.beginPath();
-      vw.ctx.arc(x, y, size, 0, 2 * Math.PI);
-      vw.ctx.fillStyle = 'green';
-      vw.ctx.fill();
-      vw.ctx.lineWidth = 5;
-      vw.ctx.strokeStyle = '#003300';
-      vw.ctx.stroke();
-      vw.ctx.restore();
-    };
-
-    const handleScroll = () => {
-      let y = window.scrollY;
-      let x = Math.sin((y * Math.PI) / 180);
-      box1.x = 50;
-      box1.y = 50 + y;
-
-      box2.x = 100;
-      box2.y = 100 + y;
-
-      draw();
-    };
-
-    const isMoving = ref(false);
-
-    const handleGetBall = (step) => {
-      let current = btnRanges.value[ball.step].start + 88,
-        target = btnRanges.value[step].start + 88;
-
-      if (step > ball.step && isMoving.value === false) {
-        isMoving.value = true;
-        requestAnimationFrame(animate);
-
-        function animate(currentTime) {
-          ball.y = current = current + 10;
-          draw();
-
-          // request another loop of animation
-          if (ball.y < target) {
-            requestAnimationFrame(animate);
-          } else {
-            ball.step = step;
-            isMoving.value = false;
-            return;
+          if (d.y <= 0 || d.y >= height.value - d.height) {
+            d.y_diff = d.y_diff * -1;
           }
-        }
-      } else if (isMoving.value === false) {
-        isMoving.value = true;
-        requestAnimationFrame(animate);
 
-        function animate(currentTime) {
-          ball.y = current = current - 10;
-          draw();
-
-          // request another loop of animation
-          if (ball.y > target) {
-            requestAnimationFrame(animate);
-          } else {
-            ball.step = step;
-            isMoving.value = false;
-            return;
-          }
-        }
-      } else {
-        console.log('移動中');
-      }
-
-      let counter = ball.y;
-    };
-
-    const ranges = ref([]);
-    const btnRanges = ref([]);
-
-    const getBoxRange = () => {
-      document.querySelectorAll('.month').forEach((sectionEl, index) => {
-        let currentRange = {
-          step: index,
-          start: sectionEl.offsetTop,
-          end: sectionEl.offsetTop + sectionEl.offsetHeight,
-        };
-        ranges.value.push(currentRange);
-      });
-    };
-
-    const getButtenRange = () => {
-      document.querySelectorAll('.btn').forEach((sectionEl, index) => {
-        let currentRange = {
-          step: index,
-          start: sectionEl.offsetTop,
-          end: sectionEl.offsetTop + sectionEl.offsetHeight,
-        };
-        btnRanges.value.push(currentRange);
-      });
-    };
-
-    const getStep = (y = 0) => {
-      let currentSection = ranges.value.filter(
-        (item) => item.start <= y && y <= item.end
-      );
-
-      return currentSection[0].step;
+          return d.y;
+        });
     };
 
     onMounted(() => {
-      getBoxRange();
-      getButtenRange();
-      canvasInit();
-      // document.addEventListener('scroll', handleScroll);
+      width.value = document.querySelector('.gallery-one').clientWidth;
+      height.value = document.querySelector('.gallery-one').clientHeight;
+      initSvgBG();
     });
 
-    return {
-      handleGetBall,
-    };
+    return {};
   },
 };
 </script>
 
 <style scoped>
-#canvasBackground {
+#svgBackground {
   position: absolute;
   z-index: 0;
 }
