@@ -11,14 +11,14 @@
       <nav
         class="md:ml-auto flex flex-wrap items-center text-base justify-center"
       >
-        <router-link class="mr-5 hover:text-gray-900" to="/project"
+        <router-link class="mr-5 hover:text-gray-900" to="/happiness-articles"
           >Happiness Project</router-link
         >
-        <router-link class="mr-5 hover:text-gray-900" to="/tests"
-          >Personality Tests</router-link
+        <router-link class="mr-5 hover:text-gray-900" to="/book-review"
+          >Book Review</router-link
         >
-        <router-link class="mr-5 hover:text-gray-900" to="/new"
-          >Monthly Aritcle</router-link
+        <router-link class="mr-5 hover:text-gray-900" to="/news-and-views"
+          >Psychology News and Views</router-link
         >
         <router-link class="mr-5 hover:text-gray-900" to="/therapists"
           >Find a Therapist</router-link

@@ -4,10 +4,11 @@ import App from './App.vue';
 
 import Home from './components/Pages/Home.vue';
 import FindTherapists from './components/Pages/FindTherapists.vue';
-import HappinessProject from './components/Pages/HappinessProject.vue';
+import HappinessProjectSinglePage from './components/Pages/HappinessProjectSinglePage.vue';
 import MentalGadget from './components/Pages/MentalGadget.vue';
-import HappinessArticleList from './components/HappinessProject/HappinessArticleList.vue';
-// import SingleArticle from './components/Pages/Article.vue';
+import HappinessArticleList from './components/HappinessProject/ArticleList.vue';
+import BookReviewArticleList from './components/BookReview/ArticleList.vue';
+import ViewsArticleList from './components/NewsAndViews/ArticleList.vue';
 import About from './components/Pages/About.vue';
 
 import 'virtual:windi.css';
@@ -28,20 +29,31 @@ const router = createRouter({
       component: FindTherapists,
     },
     {
-      path: '/project/',
-      name: 'Project',
-      component: HappinessProject,
-    },
-    {
       path: '/gadgets/',
       name: 'Gadgets',
       component: MentalGadget,
     },
     {
-      path: '/articles/',
-      name: 'ArticleList',
+      path: '/happiness-articles/',
+      name: 'happiness-articles',
       component: HappinessArticleList,
     },
+    {
+      path: '/project/',
+      name: 'Project',
+      component: HappinessProjectSinglePage,
+    },
+    {
+      path: '/book-review/',
+      name: 'book-review',
+      component: BookReviewArticleList,
+    },
+    {
+      path: '/news-and-views/',
+      name: 'news-and-views',
+      component: ViewsArticleList,
+    },
+
     // {
     //   path: '/articles/:title',
     //   name: 'Article',
