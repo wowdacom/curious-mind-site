@@ -7,7 +7,7 @@
     </div>
     <div class="logo-text">
       <div class="ml-3 text-md">Psychological</div>
-      <div class="ml-3 text-md">Hacks 42</div>
+      <div class="ml-3 text-md">Time 2022</div>
     </div>
   </div>
 </template>
@@ -36,7 +36,7 @@ export default {};
   font-family: 'Indie Flower', cursive;
 }
 .logo::before {
-  content: 'PH';
+  content: 'PT';
   color: #fff;
   font-size: 25px;
 

@@ -6,7 +6,7 @@ import Home from './components/Pages/Home.vue';
 import FindTherapists from './components/Pages/FindTherapists.vue';
 import HappinessProject from './components/Pages/HappinessProject.vue';
 import MentalGadget from './components/Pages/MentalGadget.vue';
-import ArticleList from './components/Pages/ArticleList.vue';
+import HappinessArticleList from './components/HappinessProject/HappinessArticleList.vue';
 // import SingleArticle from './components/Pages/Article.vue';
 import About from './components/Pages/About.vue';
 
@@ -40,7 +40,7 @@ const router = createRouter({
     {
       path: '/articles/',
       name: 'ArticleList',
-      component: ArticleList,
+      component: HappinessArticleList,
     },
     // {
     //   path: '/articles/:title',

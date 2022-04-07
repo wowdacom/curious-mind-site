@@ -1,5 +1,5 @@
 <template>
-  <div class="container max-w-[980px] h-[245px] mx-auto overflow-hidden">
+  <div class="container max-w-[1200px] h-[245px] mx-auto overflow-hidden">
     <div
       ref="arrowPrevEl"
       class="left-btn w-[30px] h-auto cursor-pointer"
@@ -37,20 +37,20 @@
 </template>
 
 <script>
-import Mock from "mockjs";
-import { onMounted, ref } from "vue";
-import arrowRightImg from "@/assets/angle-right-solid.svg";
-import arrowLeftImg from "@/assets/angle-left-solid.svg";
+import Mock from 'mockjs';
+import { onMounted, ref } from 'vue';
+import arrowRightImg from '@/assets/angle-right-solid.svg';
+import arrowLeftImg from '@/assets/angle-left-solid.svg';
 
 const projectList = Mock.mock({
-  "list|5": [
+  'list|5': [
     {
-      name: "@cname", // 中文名
+      name: '@cname', // 中文名
       account: `@word`, // 英文单词
       phone: /1[3-9][0-9]{9}/, // 正则模式
-      deptName: Mock.mock("@cword(2,4)"), // 随机2-4字中文单词
-      id: "@guid", // guid,
-      source: Mock.Random.image("200x100"),
+      deptName: Mock.mock('@cword(2,4)'), // 随机2-4字中文单词
+      id: '@guid', // guid,
+      source: Mock.Random.image('200x100'),
     },
   ],
 });
@@ -62,17 +62,17 @@ export default {
     const arrowPrevEl = ref(null);
     const arrowNextEl = ref(null);
     const changePosition = ref(0);
-    const tanstionState = ref("all 1s ease-out");
+    const tanstionState = ref('all 1s ease-out');
     const direction = ref(1);
 
     const handleLeft = () => {
       direction.value = 1;
-      tanstionState.value = "none";
+      tanstionState.value = 'none';
       changePosition.value = -245;
       let current = carouselEl.value.lastElementChild;
       carouselEl.value.prepend(current);
       setTimeout(() => {
-        tanstionState.value = "all .5s ease-out";
+        tanstionState.value = 'all .5s ease-out';
         changePosition.value = 0;
       });
     };
@@ -82,15 +82,15 @@ export default {
     };
 
     onMounted(() => {
-      carouselEl.value.addEventListener("transitionend", () => {
-        console.log("transitionend");
+      carouselEl.value.addEventListener('transitionend', () => {
+        console.log('transitionend');
         if (direction.value === -1) {
-          tanstionState.value = "none";
+          tanstionState.value = 'none';
           let current = carouselEl.value.firstElementChild;
           carouselEl.value.append(current);
           changePosition.value = 0;
           setTimeout(() => {
-            tanstionState.value = "all .5s ease-out";
+            tanstionState.value = 'all .5s ease-out';
           });
         }
       });

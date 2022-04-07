@@ -5,7 +5,7 @@
     :pop-articles="popArticles"
   ></PopularArticles>
   <PopularArticlesSkeleton v-else></PopularArticlesSkeleton>
-  <ArticleList></ArticleList>
+  <HappinessArticleList></HappinessArticleList>
   <RelevantArticles></RelevantArticles>
 </template>
 
