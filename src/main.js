@@ -10,6 +10,7 @@ import HappinessArticleList from './components/HappinessProject/ArticleList.vue'
 import BookReviewArticleList from './components/BookReview/ArticleList.vue';
 import ViewsArticleList from './components/NewsAndViews/ArticleList.vue';
 import About from './components/Pages/About.vue';
+import SingleArticle from './components/Pages/SingleArticle.vue';
 
 import 'virtual:windi.css';
 import '@/../node_modules/leaflet/dist/leaflet.css';
@@ -53,12 +54,11 @@ const router = createRouter({
       name: 'news-and-views',
       component: ViewsArticleList,
     },
-
-    // {
-    //   path: '/articles/:title',
-    //   name: 'Article',
-    //   component: SingleArticle,
-    // },
+    {
+      path: '/article/:title',
+      name: 'Article',
+      component: SingleArticle,
+    },
     {
       path: '/about',
       name: 'About',

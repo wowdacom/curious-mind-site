@@ -6,22 +6,13 @@
           <img
             alt="content"
             class="object-cover object-center h-full w-full"
-            src="https://dummyimage.com/1200x500"
+            :src="cover"
           />
         </div>
         <div class="flex flex-col sm:flex-row mt-10">
           <div class="sm:w-1/3 text-center sm:pr-8 sm:py-8">
             <div
-              class="
-                w-20
-                h-20
-                rounded-full
-                inline-flex
-                items-center
-                justify-center
-                bg-gray-200
-                text-gray-400
-              "
+              class="w-20 h-20 rounded-full inline-flex items-center justify-center bg-gray-200 text-gray-400"
             >
               <svg
                 fill="none"
@@ -38,41 +29,23 @@
             </div>
             <div class="flex flex-col items-center text-center justify-center">
               <h2 class="font-medium title-font mt-4 text-gray-900 text-lg">
-                Phoebe Caulfield
+                {{ title }}
               </h2>
               <div class="w-12 h-1 bg-indigo-500 rounded mt-2 mb-4"></div>
               <p class="text-base">
-                Raclette knausgaard hella meggs normcore williamsburg enamel pin
-                sartorial venmo tbh hot chicken gentrify portland.
+                {{ subtitle }}
               </p>
             </div>
           </div>
           <div
-            class="
-              sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l
-              border-gray-200
-              sm:border-t-0
-              border-t
-              mt-4
-              pt-4
-              sm:mt-0
-              text-center
-              sm:text-left
-            "
+            class="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left"
           >
-            <p class="leading-relaxed text-lg mb-4">
-              Meggings portland fingerstache lyft, post-ironic fixie man bun
-              banh mi umami everyday carry hexagon locavore direct trade art
-              party. Locavore small batch listicle gastropub farm-to-table
-              lumbersexual salvia messenger bag. Coloring book flannel truffaut
-              craft beer drinking vinegar sartorial, disrupt fashion axe
-              normcore meh butcher. Portland 90's scenester vexillologist forage
-              post-ironic asymmetrical, chartreuse disrupt butcher paleo
-              intelligentsia pabst before they sold out four loko. 3 wolf moon
-              brooklyn.
-            </p>
-            <a class="text-indigo-500 inline-flex items-center"
-              >Learn More
+            <p v-html="content" class="leading-relaxed text-lg mb-4"></p>
+            <router-link
+              class="text-indigo-500 inline-flex items-center"
+              to="/"
+            >
+              回到上一頁
               <svg
                 fill="none"
                 stroke="currentColor"
@@ -84,7 +57,7 @@
               >
                 <path d="M5 12h14M12 5l7 7-7 7"></path>
               </svg>
-            </a>
+            </router-link>
           </div>
         </div>
       </div>
@@ -93,7 +66,46 @@
 </template>
 
 <script>
-export default {};
+import { reactive, toRefs } from 'vue';
+import { db } from '../../config/firebaseConfig.js';
+import { collection, query, where, getDocs } from 'firebase/firestore';
+import { useRoute } from 'vue-router';
+
+export default {
+  setup() {
+    const article = reactive({
+      category: '',
+      content: '',
+      cover: '',
+      subtitle: '',
+      title: '',
+      url: '',
+    });
+
+    const route = useRoute();
+    const title = route.params.title;
+
+    const getCurrentAricle = async () => {
+      const q = query(
+        collection(db, 'article-lists'),
+        where('title', '==', title)
+      );
+
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        console.log(doc.data());
+        Object.assign(article, { ...doc.data(), id: doc.id });
+      });
+    };
+
+    getCurrentAricle();
+
+    return {
+      ...toRefs(article),
+    };
+  },
+};
 </script>
 
 <style></style>
