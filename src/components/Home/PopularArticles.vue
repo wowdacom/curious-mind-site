@@ -7,7 +7,7 @@
           :key="article.title"
           v-for="article in popArticles"
         >
-          <a :href="`/#/article/${article.title}`">
+          <router-link :to="`/article/${article.title}`">
             <div
               class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden bg-white"
             >
@@ -86,7 +86,7 @@
                 </div>
               </div>
             </div>
-          </a>
+          </router-link>
         </div>
       </div>
     </div>

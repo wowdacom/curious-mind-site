@@ -55,12 +55,12 @@ const router = createRouter({
       component: ViewsArticleList,
     },
     {
-      path: '/article/:title',
+      path: '/article/:title/',
       name: 'Article',
       component: SingleArticle,
     },
     {
-      path: '/about',
+      path: '/about/',
       name: 'About',
       component: About,
     },
