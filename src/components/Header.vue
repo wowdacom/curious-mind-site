@@ -9,7 +9,7 @@
         ><Logo></Logo
       ></router-link>
       <nav
-        class="md:ml-auto flex flex-wrap items-center text-base justify-center"
+        class="md:ml-auto flex flex-wrap items-center text-base md:justify-center justify-between"
       >
         <router-link class="mr-5 hover:text-gray-900" to="/happiness-articles"
           >Happiness Project</router-link

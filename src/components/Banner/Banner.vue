@@ -7,7 +7,11 @@
         <div
           class="absolute left-0 top-0 w-full h-full flex justify-center items-center text-center"
         >
-          <h1 class="text-8xl transform -rotate-6">My Happiness Project ^ᗜ^</h1>
+          <h1
+            class="lg:text-8xl lg:translate-y-2 text-5xl transform -rotate-6 translate-y-8"
+          >
+            My Happiness Project ^ᗜ^
+          </h1>
           <img
             class="absolute left-[0px] bottom-[-40px] w-[35%]"
             src="https://i.imgur.com/bqLyvxa.png"
