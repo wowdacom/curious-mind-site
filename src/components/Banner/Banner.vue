@@ -8,7 +8,7 @@
           class="absolute left-0 top-0 w-full h-full flex justify-center items-center text-center"
         >
           <h1
-            class="lg:text-8xl lg:translate-y-2 text-5xl transform -rotate-6 translate-y-8 z-10"
+            class="lg:text-8xl lg:translate-y-2 text-4xl transform -rotate-6 lg:translate-y-8 z-10"
           >
             My Happiness Project ^ᗜ^
           </h1>
@@ -17,10 +17,11 @@
             src="https://i.imgur.com/bqLyvxa.png"
             alt=""
           />
-          <div class="absolute right-[60px] bottom-[-10px] hinge">
+          <div
+            class="absolute right-0 bottom-[-60px] lg:right-[60px] lg:bottom-[-10px] hinge"
+          >
             <img
-              width="70"
-              height="70"
+              class="w-[30px] h-[30px] lg:w-[70px] lg:h-[70px]"
               src="https://i.imgur.com/kCJBz7w.png"
               alt=""
             />
