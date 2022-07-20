@@ -6,8 +6,8 @@
       <img src="https://i.imgur.com/biXQwA3.jpg" />
     </div>
     <div class="logo-text">
-      <div class="ml-3 text-md">Psychological</div>
-      <div class="ml-3 text-md">Time 2022</div>
+      <div class="ml-3 text-md">The Undercover</div>
+      <div class="ml-3 text-md">Psychologist</div>
     </div>
   </div>
 </template>

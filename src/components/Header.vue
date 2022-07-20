@@ -12,18 +12,18 @@
         class="md:ml-auto flex flex-wrap items-center text-base md:justify-center justify-between"
       >
         <router-link class="mr-5 hover:text-gray-900" to="/happiness-articles"
-          >Happiness Project</router-link
+          >我的快樂生活提案</router-link
         >
         <router-link class="mr-5 hover:text-gray-900" to="/book-review"
-          >Book Review</router-link
+          >心理學讀書趣</router-link
         >
         <router-link class="mr-5 hover:text-gray-900" to="/news-and-views"
-          >Psychology News and Views</router-link
+          >心理新聞、研究</router-link
         >
         <router-link class="mr-5 hover:text-gray-900" to="/therapists"
-          >Find a Therapist</router-link
+          >尋找專業人員協助</router-link
         >
-        <div class="mr-5 inline-block hover:text-gray-900">About</div>
+        <div class="mr-5 inline-block hover:text-gray-900">關於</div>
       </nav>
     </div>
   </header>

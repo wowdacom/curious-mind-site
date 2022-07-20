@@ -106,7 +106,7 @@
                   Psychology news and views
                 </h2>
                 <h1 class="title-font text-xl font-medium text-gray-900 mb-3">
-                  It’s the Journey, Not the Destination
+                  追求目標只是旅程，不是終點
                 </h1>
                 <p class="leading-relaxed mb-5">
                   How Metaphor Drives Growth After Goal Attainment

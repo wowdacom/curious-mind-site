@@ -1,5 +1,5 @@
 <template>
-  <div class="relative pb-104px">
+  <div class="relative pb-170px lg:pb-104px">
     <Header></Header>
     <router-view></router-view>
     <Footer></Footer>
