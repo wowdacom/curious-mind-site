@@ -41,12 +41,8 @@ import { getPolygonsPostion } from './shape-builder.js';
 import { reactive, ref } from 'vue';
 import * as d3 from 'd3';
 import { onMounted } from 'vue';
-import March from '../HappinessProject/March.vue';
 
 export default {
-  components: {
-    March,
-  },
   setup() {
     const width = ref(0);
     const height = ref(0);

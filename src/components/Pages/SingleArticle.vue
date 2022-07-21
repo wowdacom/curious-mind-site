@@ -38,7 +38,7 @@
             </div>
           </div>
           <div
-            class="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left"
+            class="w-2/3 pl-8 py-8 border-l lg:border-gray-200 border-t-0 lg:border-t lg:mt-4 lg:pt-4 mt-0"
           >
             <p v-html="content" class="leading-relaxed text-lg mb-4"></p>
             <router-link
