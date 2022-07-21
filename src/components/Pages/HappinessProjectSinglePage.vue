@@ -1,7 +1,7 @@
 <template>
   <div class="text-gray-600 body-font relative">
     <div id="svgBackground"></div>
-    <section class="month month1">
+    <section>
       <div class="march text-gray-600 body-font">
         <div class="container px-5 py-24 mx-auto">
           <div class="lg:w-4/5 mx-auto flex flex-wrap">
