@@ -25,7 +25,7 @@ export default {
 
       const querySnapshot = await getDocs(collection(db, 'article-lists'));
       querySnapshot.forEach((doc) => {
-        popArticles.value.push(doc.data());
+        popArticles.value.unshift(doc.data());
       });
     };
 
