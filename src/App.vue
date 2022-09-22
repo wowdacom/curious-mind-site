@@ -8,8 +8,9 @@
 
 <style>
 #app {
-  background-image: url('./assets/p0435_s.png');
+  background-image: url('./assets/p0302_m.png');
   min-height: 100vh;
+  background-attachment: fixed;
 }
 </style>
 <script>
