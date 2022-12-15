@@ -6,9 +6,9 @@
           class="absolute left-0 top-0 w-full h-full flex justify-center items-center text-center"
         >
           <h1
-            class="lg:text-8xl lg:translate-y-1 text-4xl transform -rotate-6 lg:translate-y-8 z-50 p-10"
+            class="lg:text-10xl lg:translate-y-1 text-6xl transform -rotate-6 lg:translate-y-8 z-50 p-10"
           >
-            Let's Think Again!
+            <span class="lg:text-6xl text-2xl">Let's</span> Think Again!
           </h1>
           <img
             class="absolute left-[0px] bottom-[-20px] lg:left-[-100px] lg:top-[-200px] w-[35%]"
@@ -51,11 +51,7 @@ export default {};
 }
 
 .container h1 {
-  font-family: 'Rock 3D', cursive;
-  background: -webkit-linear-gradient(left, #fff176, #ff3d00);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 600;
+  font-family: 'Indie Flower', cursive;
 }
 
 @keyframes hinge {

@@ -66,20 +66,20 @@
 </template>
 
 <script>
-import { reactive, toRefs } from 'vue';
-import { db } from '../../config/firebaseConfig.js';
-import { collection, query, where, getDocs } from 'firebase/firestore';
-import { useRoute } from 'vue-router';
+import { reactive, toRefs } from "vue";
+import { db } from "../../config/firebaseConfig.js";
+import { collection, query, where, getDocs } from "firebase/firestore";
+import { useRoute } from "vue-router";
 
 export default {
   setup() {
     const article = reactive({
-      category: '',
-      content: '',
-      cover: '',
-      subtitle: '',
-      title: '',
-      url: '',
+      category: "",
+      content: "",
+      cover: "",
+      subtitle: "",
+      title: "",
+      url: "",
     });
 
     const route = useRoute();
@@ -87,8 +87,8 @@ export default {
 
     const getCurrentAricle = async () => {
       const q = query(
-        collection(db, 'article-lists'),
-        where('title', '==', title)
+        collection(db, "article-lists"),
+        where("title", "==", title)
       );
 
       const querySnapshot = await getDocs(q);
@@ -108,4 +108,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+p {
+  font-family: Microsoft JhengHei;
+  font-weight: 600;
+}
+</style>

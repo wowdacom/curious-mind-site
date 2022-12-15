@@ -8,13 +8,13 @@
 
 <style>
 #app {
-  background-image: url('./assets/p0302_m.png');
+  background-image: url("./assets/p0079_m.png");
   min-height: 100vh;
   background-attachment: fixed;
 }
 </style>
 <script>
-import { getLCP, getFID, getCLS } from 'web-vitals';
+import { getLCP, getFID, getCLS } from "web-vitals";
 
 export default {
   props: {
