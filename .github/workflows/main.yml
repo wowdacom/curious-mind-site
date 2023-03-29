@@ -29,14 +29,14 @@ jobs:
         run: |
           npm run build
       - name: Commit files
-          run: |
-            cd $PUBLISH_DIR
-            git init
-            git config --local user.name $USER_NAME
-            git config --local user.email $USER_EMAIL
-            git status
-            git remote add origin https://github.com/wowdacom/none-chinese-a-year.git
-            git checkout -b gh-pages
-            git add --all
-            git commit -m "deploy to Github pages"
-            git push origin gh-pages -f
+        run: |
+          cd $PUBLISH_DIR
+          git init
+          git config --local user.name $USER_NAME
+          git config --local user.email $USER_EMAIL
+          git status
+          git remote add origin https://github.com/wowdacom/none-chinese-a-year.git
+          git checkout -b gh-pages
+          git add --all
+          git commit -m "deploy to Github pages"
+          git push origin gh-pages -f
