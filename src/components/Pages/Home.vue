@@ -1,5 +1,6 @@
 <template>
   <Banner></Banner>
+  <h1 class="text-4xl text-center bg-red-300">測試</h1>
   <PopularArticles
     v-if="popArticles.length"
     :pop-articles="popArticles"
@@ -10,10 +11,10 @@
 </template>
 
 <script>
-import { ref } from 'vue';
-import { db } from '../../config/firebaseConfig.js';
-import { doc, getDoc, getDocs, collection } from 'firebase/firestore';
-import process from 'process';
+import { ref } from "vue";
+import { db } from "../../config/firebaseConfig.js";
+import { doc, getDoc, getDocs, collection } from "firebase/firestore";
+import process from "process";
 
 export default {
   setup() {
@@ -21,9 +22,9 @@ export default {
     // Get a reference to the database service
 
     const getArticlesList = async () => {
-      const docRef = doc(db, 'article-lists', 'popular-article-lists');
+      const docRef = doc(db, "article-lists", "popular-article-lists");
 
-      const querySnapshot = await getDocs(collection(db, 'article-lists'));
+      const querySnapshot = await getDocs(collection(db, "article-lists"));
       querySnapshot.forEach((doc) => {
         popArticles.value.unshift(doc.data());
       });
