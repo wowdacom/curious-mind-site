@@ -12,7 +12,7 @@
 
 <script>
 import { ref } from "vue";
-import { db } from "../../config/firebaseConfig.js";
+import { db } from "@/config/firebaseConfig.js";
 import { doc, getDoc, getDocs, collection } from "firebase/firestore";
 import process from "process";
 

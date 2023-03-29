@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vite-ssg build -c vite.config.js",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -23,7 +23,6 @@
     "unplugin-vue-components": "^0.17.9",
     "vite": "^2.7.2",
     "vite-plugin-windicss": "^1.6.1",
-    "vite-ssg": "^0.22.1",
     "vue-router": "^4.1.6",
     "windicss": "^3.4.0"
   }

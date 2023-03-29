@@ -67,7 +67,7 @@
 
 <script>
 import { reactive, toRefs } from "vue";
-import { db } from "../../config/firebaseConfig.js";
+import { db } from "@/config/firebaseConfig.js";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { useRoute } from "vue-router";
 
