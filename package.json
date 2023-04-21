@@ -4,11 +4,14 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "d3": "^7.4.0",
     "firebase": "^9.4.1",
+    "gh-pages": "^5.0.0",
     "leaflet": "^1.7.1",
     "mockjs": "^1.1.0",
     "pinia": "^2.0.12",
