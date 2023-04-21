@@ -8,8 +8,6 @@ jobs:
     name: Build and deploy gh-pages
     env:
       MY_SECRET: ${{secrets.COMMIT_SECRET}}
-      USER_NAME: wowdacom
-      USER_EMAIL: wowdacom@gmail.com
       PUBLISH_DIR: ./dist
     runs-on: ubuntu-latest
     strategy:
@@ -32,6 +30,6 @@ jobs:
         run: |
           cd $PUBLISH_DIR
           git init
-          git config --global user.name $USER_NAME
-          git config --global user.email $USER_EMAIL
+          git config --global user.name wowdacom
+          git config --global user.email wowdacom@gmail.com
           npm run deploy
