@@ -32,8 +32,8 @@ jobs:
         run: |
           cd $PUBLISH_DIR
           git init
-          git config --local user.name $USER_NAME
-          git config --local user.email $USER_EMAIL
+          git config --global user.name $USER_NAME
+          git config --global user.email $USER_EMAIL
           git status
           git remote add origin https://github.com/wowdacom/none-chinese-a-year.git
           npm run deploy
