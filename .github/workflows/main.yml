@@ -36,5 +36,5 @@ jobs:
           git config --global user.name $USER_NAME
           git config --global user.email $USER_EMAIL
           git status
-          git remote add origin https://$USER_NAME:$MY_PASS@github.com/$USER_NAME/project.git
+          git remote add origin https://$USER_NAME:$MY_PASS@github.com/$USER_NAME/none-chinese-a-year.git
           npm run deploy
