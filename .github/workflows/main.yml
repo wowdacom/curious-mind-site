@@ -8,9 +8,9 @@ jobs:
     name: Build and deploy gh-pages
     env:
       MY_SECRET: ${{secrets.COMMIT_SECRET}}
+      MY_PASS: ${{secrets.COMMIT_PASS}}
       USER_NAME: wowdacom
       USER_EMAIL: wowdacom@gmail.com
-      PASS: @au4au4au4
       PUBLISH_DIR: ./dist
     runs-on: ubuntu-latest
     strategy:
@@ -36,5 +36,5 @@ jobs:
           git config --global user.name $USER_NAME
           git config --global user.email $USER_EMAIL
           git status
-          git remote set-url origin git@github.com:wowdacom/none-chinese-a-year.git
+          git remote add origin https://$USER_NAME:$MY_PASS@github.com/$USER_NAME/project.git
           npm run deploy
