@@ -30,4 +30,8 @@ jobs:
           npm run build
       - name: Deploy
         run: |
+          cd $PUBLISH_DIR
+          git init
+          git config --local user.name $USER_NAME
+          git config --local user.email $USER_EMAIL
           npm run deploy
