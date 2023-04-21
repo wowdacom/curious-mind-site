@@ -1,6 +1,5 @@
 <template>
   <Banner></Banner>
-  <h1 class="text-4xl text-center bg-red-300">測試</h1>
   <PopularArticles
     v-if="popArticles.length"
     :pop-articles="popArticles"

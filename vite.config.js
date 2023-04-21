@@ -15,7 +15,7 @@ const version = +new Date();
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: process.env.NODE_ENV !== "production" ? "./" : "/",
+  base: process.env.NODE_ENV !== "production" ? "./" : "/none-chinese-a-year/",
   plugins: [
     vue(),
     WindiCSS(),
