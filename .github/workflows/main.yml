@@ -38,4 +38,5 @@ jobs:
           git status
           ssh -A git@github.com
           git remote add origin https://$USER_NAME:$MY_PASS@github.com/$USER_NAME/none-chinese-a-year.git
+          git branch -m main
           npm run deploy
