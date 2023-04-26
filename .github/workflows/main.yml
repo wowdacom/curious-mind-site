@@ -35,8 +35,8 @@ jobs:
           git init
           git config --global user.name $USER_NAME
           git config --global user.email $USER_EMAIL
+          git branch -m main
           git status
           ssh -A git@github.com
           git remote add origin https://$USER_NAME:$MY_PASS@github.com/$USER_NAME/none-chinese-a-year.git
-          git branch -m main
           npm run deploy
