@@ -1,16 +1,6 @@
 - name: Vue to Github Pages
   uses: xRealNeon/VuePagesAction@1.0.1
-- name: Build Vue
-  on: [push]
-  jobs:
-    build_vue:
-      runs-on: ubuntu-latest
-      name: Build Vue
-      steps:
-        - uses: actions/checkout@v2
-        - id: Build-Vue
-          uses: xRealNeon/VuePagesAction@1.0.1
-          with:
-            username: "wowdacom"
-            reponame: "none-chinese-a-year"
-            token: ${{ secrets.COMMIT_SECRET }}
+  with:
+    username: "wowdacom"
+    reponame: "none-chinese-a-year"
+    token: ${{ secrets.COMMIT_SECRET }}
