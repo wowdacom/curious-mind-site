@@ -33,6 +33,8 @@ jobs:
         run: |
           cd $PUBLISH_DIR
           git init
+          git config --global user.email "wowdacom@gmail.com"
+          git config --global user.name "wowdacom"
           git add -A
           git commit -m 'deploy'
           git branch -M main
