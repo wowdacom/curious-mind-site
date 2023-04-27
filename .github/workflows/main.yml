@@ -35,7 +35,7 @@ jobs:
           git config --global user.name wowdacom
           git config --global user.email wowdacom@gmail.com
           git status
-          git remote add origin https://$MY_SECRET@github.com/none-chinese-a-year.git
+          git remote add origin https://{$MY_SECRET}@github.com/none-chinese-a-year.git
           git checkout -b gh-pages
           git add --all
           git commit -m "deploy to Github pages"
