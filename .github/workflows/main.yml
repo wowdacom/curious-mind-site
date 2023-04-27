@@ -1,6 +1,6 @@
-- name: Vue to Github Pages
-  uses: xRealNeon/VuePagesAction@1.0.1
-  with:
-    username: "wowdacom"
-    reponame: "none-chinese-a-year"
-    token: ${{ secrets.COMMIT_SECRET }}
+name: Vue to Github Pages
+uses: xRealNeon/VuePagesAction@1.0.1
+with:
+  username: "wowdacom"
+  reponame: "none-chinese-a-year"
+  token: ${{ secrets.COMMIT_SECRET }}
