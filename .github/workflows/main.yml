@@ -8,7 +8,6 @@ jobs:
     name: Build and deploy gh-pages
     env:
       MY_SECRET: ${{secrets.COMMIT_SECRET}}
-      MY_PASS: ${{secrets.COMMIT_PASS}}
       USER_NAME: wowdacom
       USER_EMAIL: wowdacom@gmail.com
       PUBLISH_DIR: ./dist
@@ -33,9 +32,12 @@ jobs:
         run: |
           cd $PUBLISH_DIR
           git init
-          git config --global user.email "wowdacom@gmail.com"
-          git config --global user.name "wowdacom"
-          git add -A
-          git commit -m 'deploy'
-          git branch -M main
-          git push -f git@github.com:wowdacom/none-chinese-a-year.git main:gh-pages
+          git config --global user.name wowdacom
+          git config --global user.email wowdacom@gmail.com
+          git status
+          git remote add origin https://$MY_SECRET@github.com/none-chinese-a-year.git
+          git checkout -b gh-pages
+          git add --all
+          git commit -m "deploy to Github pages"
+          git push origin gh-pages -f
+          echo 🤘 deploy gh-pages complete.
