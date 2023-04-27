@@ -1,42 +1,16 @@
-name: deploy gh-pages
-on:
-  push:
-    branches:
-      - main
-jobs:
-  build:
-    name: Build and deploy gh-pages
-    env:
-      MY_SECRET: ${{secrets.COMMIT_SECRET}}
-      MY_PASS: ${{secrets.COMMIT_PASS}}
-      USER_NAME: wowdacom
-      USER_EMAIL: wowdacom@gmail.com
-      PUBLISH_DIR: ./dist
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [16.x]
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: npm install
-        run: |
-          npm install
-      - name: npm run build
-        run: |
-          npm run build
-      - name: Deploy
-        run: |
-          cd $PUBLISH_DIR
-          git init
-          git config --global user.name $USER_NAME
-          git config --global user.email $USER_EMAIL
-          git branch -m main
-          git status
-          ssh -A git@github.com
-          git remote add origin https://$USER_NAME:$MY_PASS@github.com/$USER_NAME/none-chinese-a-year.git
-          npm run deploy
+- name: Vue to Github Pages
+  uses: xRealNeon/VuePagesAction@1.0.1
+- name: Build Vue
+  on: [push]
+  jobs:
+    build_vue:
+      runs-on: ubuntu-latest
+      name: Build Vue
+      steps:
+        - uses: actions/checkout@v2
+        - id: Build-Vue
+          uses: xRealNeon/VuePagesAction@1.0.1
+          with:
+            username: "wowdacom"
+            reponame: "none-chinese-a-year"
+            token: ${{ secrets.COMMIT_SECRET }}
