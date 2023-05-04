@@ -8,7 +8,7 @@
 
 <style>
 #app {
-  background-image: url("./assets/p0079_m.png");
+  background-image: url("./assets/pink_paper.jpg");
   min-height: 100vh;
   background-attachment: fixed;
 }

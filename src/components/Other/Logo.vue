@@ -6,8 +6,8 @@
       <img src="https://i.imgur.com/biXQwA3.jpg" />
     </div>
     <div class="logo-text">
-      <div class="ml-3 text-md">The Undercover</div>
-      <div class="ml-3 text-md">Psychologist</div>
+      <div class="ml-3 text-md">Curious Mind</div>
+      <div class="ml-3 text-md">Psych</div>
     </div>
   </div>
 </template>
@@ -17,7 +17,7 @@ export default {};
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
 
 .logo {
   position: relative;
@@ -33,10 +33,10 @@ export default {};
     0 90%,
     0 30%
   );
-  font-family: 'Indie Flower', cursive;
+  font-family: "Indie Flower", cursive;
 }
 .logo::before {
-  content: 'PT';
+  content: "PT";
   color: #fff;
   font-size: 25px;
 
@@ -46,6 +46,6 @@ export default {};
   transform: translate(-50%, -50%);
 }
 .logo-text {
-  font-family: 'Indie Flower', cursive;
+  font-family: "Indie Flower", cursive;
 }
 </style>
