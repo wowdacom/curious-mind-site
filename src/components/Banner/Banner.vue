@@ -8,7 +8,7 @@
           <h1
             class="lg:text-10xl lg:translate-y-1 text-6xl transform -rotate-6 lg:translate-y-8 z-50 p-10"
           >
-            <span class="lg:text-6xl text-2xl">Let's</span> Think Again!
+            <span class="lg:text-6xl text-2xl">Let's</span> Psychology!
           </h1>
           <img
             class="absolute left-[0px] bottom-[-20px] lg:left-[-100px] lg:top-[-200px] w-[35%]"
@@ -44,14 +44,14 @@ export default {};
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Rock+3D&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rock+3D&display=swap");
 
 .container {
   padding-top: 10%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
 }
 
 .container h1 {
-  font-family: 'Indie Flower', cursive;
+  font-family: "Indie Flower", cursive;
 }
 
 @keyframes hinge {
