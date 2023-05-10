@@ -32,7 +32,7 @@
               <div class="text-gray-500 text-sm mb-4">
                 <p>作者：Paul Bloom</p>
                 <p>時間：2023年2月28日</p>
-                <p>地點：--</p>
+                <p>地點：Taiwan</p>
               </div>
               <div class="flex justify-end h-10">
                 <a
