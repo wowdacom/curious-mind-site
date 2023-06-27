@@ -11,26 +11,28 @@
       <nav
         class="md:ml-auto flex flex-wrap items-center text-base md:justify-center justify-between"
       >
-        <router-link class="mr-5 hover:text-gray-900" to="/happiness-articles"
+        <router-link class="mr-5 hover:text-gray-900" to="/happiness-proposal"
           >我的快樂生活提案</router-link
         >
-        <router-link class="mr-5 hover:text-gray-900" to="/book-review"
-          >心理學讀書趣</router-link
+        <router-link class="mr-5 hover:text-gray-900" to="/book-reviews"
+          >外文讀書趣</router-link
         >
-        <router-link class="mr-5 hover:text-gray-900" to="/news-and-views"
-          >心理新聞、研究</router-link
+        <router-link class="mr-5 hover:text-gray-900" to="/biblical-studies"
+          >聖經研究</router-link
         >
-        <router-link class="mr-5 hover:text-gray-900" to="/therapists"
-          >尋找專業人員協助</router-link
+        <router-link class="mr-5 hover:text-gray-900" to="/resources"
+          >資源分享</router-link
         >
-        <div class="mr-5 inline-block hover:text-gray-900">關於</div>
+        <router-link class="mr-5 hover:text-gray-900" to="/about"
+          >關於我</router-link
+        >
       </nav>
     </div>
   </header>
 </template>
 
 <script>
-import Logo from '@/components/Other/Logo.vue';
+import Logo from "@/components/Other/Logo.vue";
 export default {
   components: {
     Logo,

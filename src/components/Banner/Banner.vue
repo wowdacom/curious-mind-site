@@ -6,9 +6,9 @@
           class="absolute left-0 top-0 w-full h-full flex justify-center items-center text-center"
         >
           <h1
-            class="lg:text-10xl lg:translate-y-1 text-6xl transform -rotate-6 lg:translate-y-8 z-50 p-10"
+            class="lg:text-8xl lg:translate-y-1 text-6xl transform -rotate-6 lg:translate-y-8 z-50 p-10"
           >
-            <span class="lg:text-6xl text-2xl">Let's</span>Psychologee!
+            Let's Make A Difference!
           </h1>
           <img
             class="absolute left-[0px] bottom-[-20px] lg:left-[-100px] lg:top-[-200px] w-[35%]"

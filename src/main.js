@@ -1,70 +1,64 @@
-import { createApp } from 'vue';
-import { createRouter, createWebHashHistory } from 'vue-router';
-import App from './App.vue';
+import { createApp } from "vue";
+import { createRouter, createWebHashHistory } from "vue-router";
+import App from "./App.vue";
+import Home from "./components/Pages/Home.vue";
+import FindResources from "./components/Pages/FindResources.vue";
+import HappinessArticleSinglePage from "./components/Pages/HappinessArticleSinglePage.vue";
+import HappinessArticleList from "./components/HappinessProject/ArticleList.vue";
+import BookReviewArticleList from "./components/BookReview/ArticleList.vue";
+import BiblicalStudiesList from "./components/BiblicalStudiesList/ArticleList.vue";
+import About from "./components/Pages/About.vue";
+import SingleArticle from "./components/Pages/SingleArticle.vue";
 
-import Home from './components/Pages/Home.vue';
-import FindTherapists from './components/Pages/FindTherapists.vue';
-import HappinessProjectSinglePage from './components/Pages/HappinessProjectSinglePage.vue';
-import MentalGadget from './components/Pages/MentalGadget.vue';
-import HappinessArticleList from './components/HappinessProject/ArticleList.vue';
-import BookReviewArticleList from './components/BookReview/ArticleList.vue';
-import ViewsArticleList from './components/NewsAndViews/ArticleList.vue';
-import About from './components/Pages/About.vue';
-import SingleArticle from './components/Pages/SingleArticle.vue';
-
-import 'virtual:windi.css';
-import '@/../node_modules/leaflet/dist/leaflet.css';
+import "virtual:windi.css";
+import "@/../node_modules/leaflet/dist/leaflet.css";
 
 const router = createRouter({
-  base: './',
+  base: "./",
   history: createWebHashHistory(),
   routes: [
     {
-      path: '/',
-      name: 'Home',
+      path: "/",
+      name: "Home",
       component: Home,
     },
     {
-      path: '/therapists/',
-      name: 'Therapists',
-      component: FindTherapists,
+      path: "/resources/",
+      name: "resources",
+      component: FindResources,
     },
     {
-      path: '/gadgets/',
-      name: 'Gadgets',
-      component: MentalGadget,
-    },
-    {
-      path: '/happiness-articles/',
-      name: 'happiness-articles',
+      path: "/happiness-proposal/",
+      name: "happiness-proposal",
       component: HappinessArticleList,
     },
+
     {
-      path: '/project/',
-      name: 'Project',
-      component: HappinessProjectSinglePage,
+      path: "/happiness-proposal/:id?",
+      name: "happiness-proposal-single-page",
+      component: HappinessArticleSinglePage,
     },
     {
-      path: '/book-review/',
-      name: 'book-review',
+      path: "/book-reviews/",
+      name: "/book-reviews",
       component: BookReviewArticleList,
     },
     {
-      path: '/news-and-views/',
-      name: 'news-and-views',
-      component: ViewsArticleList,
+      path: "/biblical-studies/",
+      name: "biblical-studies",
+      component: BiblicalStudiesList,
     },
     {
-      path: '/article/:title/',
-      name: 'Article',
+      path: "/article/:title/",
+      name: "Article",
       component: SingleArticle,
     },
     {
-      path: '/about/',
-      name: 'About',
+      path: "/about/",
+      name: "About",
       component: About,
     },
   ],
 });
 
-createApp(App).use(router).mount('#app');
+createApp(App).use(router).mount("#app");

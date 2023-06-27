@@ -5,7 +5,7 @@
         <h1
           class="text-2xl font-medium title-font mb-4 text-gray-900 tracking-widest"
         >
-          OUR TEAM
+          The Happiness Notes《我的快樂生活筆記》
         </h1>
         <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
           Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical
@@ -20,17 +20,17 @@
           >
             <img
               alt="team"
-              class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4"
-              src="https://dummyimage.com/200x200"
+              class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4 bg-green-500/50"
+              src="https://i.imgur.com/lGnCvJz.png"
             />
             <div class="flex-grow sm:pl-8">
               <h2 class="title-font font-medium text-lg text-gray-900">
-                Holden Caulfield
+                第一個月〈七月〉：沒事，深呼吸
               </h2>
-              <h3 class="text-gray-500 mb-3">UI Developer</h3>
+              <h3 class="text-gray-500 mb-3">3.3秒的呼吸奧祕</h3>
               <p class="mb-4">
-                DIY tote bag drinking vinegar cronut adaptogen squid fanny pack
-                vaporware.
+                Life is pretty easy. Breathe in and breathe out, then repeat. –
+                Author Unknown
               </p>
               <span class="inline-flex">
                 <a class="text-gray-500">
