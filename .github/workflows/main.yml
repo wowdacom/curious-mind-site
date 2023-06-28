@@ -36,7 +36,7 @@ jobs:
           git config --global user.email wowdacom@gmail.com
           git config --global init.defaultBranch main
           git status
-          git remote add origin https://github.com/$USER_NAME/curious-mind-site.git
+          git remote add origin https://github.com/wowdacom/curious-mind-site.git
           git checkout -b gh-pages
           git add --all
           git commit -m "deploy to Github pages"
