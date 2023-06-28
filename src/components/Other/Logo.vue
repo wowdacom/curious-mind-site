@@ -7,7 +7,7 @@
     </div>
     <div class="logo-text">
       <div class="ml-3 text-md">Curious Mind</div>
-      <div class="ml-3 text-md">Psych</div>
+      <div class="ml-3 text-md">Site</div>
     </div>
   </div>
 </template>
@@ -36,13 +36,13 @@ export default {};
   font-family: "Indie Flower", cursive;
 }
 .logo::before {
-  content: "PT";
+  content: "CMS";
   color: #fff;
   font-size: 25px;
 
   position: absolute;
-  left: 45%;
-  top: 55%;
+  left: 50%;
+  top: 60%;
   transform: translate(-50%, -50%);
 }
 .logo-text {

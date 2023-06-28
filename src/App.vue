@@ -30,7 +30,7 @@ export default {
     },
   },
   setup(props) {
-    const source = ref("");
+    const source = ref(pink);
     const route = useRoute();
     watch(
       () => route.path,

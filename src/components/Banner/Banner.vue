@@ -8,7 +8,12 @@
           <h1
             class="lg:text-8xl lg:translate-y-1 text-6xl transform -rotate-6 lg:translate-y-8 z-50 p-10"
           >
-            Let's Make A Difference!
+            Let's
+            <span
+              class="text-transparent text-stroke-md text-stroke-blue-500/50"
+              >Make</span
+            >
+            A Difference!
           </h1>
           <img
             class="absolute left-[0px] bottom-[-20px] lg:left-[-100px] lg:top-[-200px] w-[35%]"

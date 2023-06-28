@@ -6,6 +6,7 @@ import FindResources from "./components/Pages/FindResources.vue";
 import HappinessArticleSinglePage from "./components/Pages/HappinessArticleSinglePage.vue";
 import HappinessArticleList from "./components/HappinessProject/ArticleList.vue";
 import BookReviewArticleList from "./components/BookReview/ArticleList.vue";
+import TechStudiesList from "./components/TechStudies/ArticleList.vue";
 import BiblicalStudiesList from "./components/BiblicalStudiesList/ArticleList.vue";
 import About from "./components/Pages/About.vue";
 import SingleArticle from "./components/Pages/SingleArticle.vue";
@@ -42,6 +43,11 @@ const router = createRouter({
       path: "/book-reviews/",
       name: "/book-reviews",
       component: BookReviewArticleList,
+    },
+    {
+      path: "/tech-studies/",
+      name: "tech-studies",
+      component: TechStudiesList,
     },
     {
       path: "/biblical-studies/",
