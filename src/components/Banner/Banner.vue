@@ -9,10 +9,7 @@
             class="lg:text-8xl lg:translate-y-1 text-6xl transform -rotate-6 lg:translate-y-8 z-50 p-10"
           >
             Let's
-            <span
-              class="text-transparent text-stroke-md text-stroke-blue-500/50"
-              >Make</span
-            >
+            <span class="animated-text">Make</span>
             A Difference!
           </h1>
           <img
@@ -183,5 +180,34 @@ export default {};
   transform-origin: 50% 50%;
   animation-fill-mode: forwards;
   padding: 10px;
+}
+
+.animated-text {
+  display: inline-block;
+  animation: 3s linear 1s 3 alternate changeColor;
+  color: lightblue;
+  text-shadow: 0 0 10px blue;
+}
+
+@keyframes changeColor {
+  0% {
+    color: transparent;
+    text-shadow: none;
+  }
+
+  50% {
+    color: lightblue;
+    text-shadow: 0 0 10px blue;
+  }
+
+  75% {
+    color: transparent;
+    text-shadow: none;
+  }
+
+  100% {
+    color: lightblue;
+    text-shadow: 0 0 10px blue;
+  }
 }
 </style>
