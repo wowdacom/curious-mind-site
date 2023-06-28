@@ -7,7 +7,7 @@ jobs:
   build:
     name: Build and deploy gh-pages
     env:
-      MY_SECRET: ${{secrets.COMMIT_SECRET}}
+      MY_SECRET: ${{ secrets.COMMIT_SECRET }}
       USER_NAME: wowdacom
       USER_EMAIL: wowdacom@gmail.com
       PUBLISH_DIR: ./dist
@@ -35,7 +35,7 @@ jobs:
           git config --global user.name wowdacom
           git config --global user.email wowdacom@gmail.com
           git status
-          git remote add origin https://${{ USER_NAME }}:${{ MY_SECRET }}@github.com/${{ USER_NAME }}/curious-mind-site.git
+          git remote add origin https://${{ USER_NAME }}:${{ secrets.COMMIT_SECRET }}@github.com/${{ USER_NAME }}/curious-mind-site.git
           git checkout -b gh-pages
           git add --all
           git commit -m "deploy to Github pages"
