@@ -33,7 +33,6 @@ const router = createRouter({
       name: "happiness-proposal",
       component: HappinessArticleList,
     },
-
     {
       path: "/happiness-proposal/:id?",
       name: "happiness-proposal-single-page",
@@ -53,6 +52,11 @@ const router = createRouter({
       path: "/biblical-studies/",
       name: "biblical-studies",
       component: BiblicalStudiesList,
+    },
+    {
+      path: "/biblical-studies/:title/",
+      name: "biblical-studies",
+      component: SingleArticle,
     },
     {
       path: "/article/:title/",

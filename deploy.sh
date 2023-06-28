@@ -23,6 +23,6 @@ git branch -M main
 # git remote add origin https://github.com/wowdacom/none-chinese-a-year.git
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:wowdacom/none-chinese-a-year.git main:gh-pages
+git push -f git@github.com:wowdacom/curious-mind-site.git main:gh-pages
 
 cd -

@@ -9,7 +9,9 @@
         <h3>{{ article.title }}</h3>
         <p class="description">{{ article.description }}</p>
         <div class="read-more-container">
-          <a :href="article.link" class="read-more">繼續閱讀</a>
+          <router-link :to="`/article/${article.link}`" class="read-more"
+            >繼續閱讀</router-link
+          >
         </div>
         <div class="category-tag">{{ article.category }}</div>
         <div class="divider"></div>
