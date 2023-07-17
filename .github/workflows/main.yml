@@ -12,6 +12,10 @@ jobs:
       USER_EMAIL: wowdacom@gmail.com
       PUBLISH_DIR: ./dist
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+      contents: read
     strategy:
       matrix:
         node-version: [16.x]
