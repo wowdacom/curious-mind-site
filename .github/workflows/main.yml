@@ -30,7 +30,7 @@ jobs:
           npm run build
       - name: Deploy
         run: |
-          cd $PUBLISH_DIR
+          cd ${{ env.PUBLISH_DIR }}
           git init
           git config --global user.name wowdacom
           git config --global user.email wowdacom@gmail.com
