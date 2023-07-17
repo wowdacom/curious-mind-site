@@ -31,7 +31,7 @@
             <div class="flex justify-between items-end">
               <div class="text-gray-500 text-sm mb-4">
                 <p>作者：Paul Bloom</p>
-                <p>時間：2023年2月28日</p>
+                <p>時間：2023年7月17日</p>
                 <p>地點：Taiwan</p>
               </div>
               <div class="flex justify-end h-10">
