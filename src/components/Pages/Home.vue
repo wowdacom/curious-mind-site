@@ -17,15 +17,7 @@
                 Psych: The Story of the Human Mind
               </h2>
               <p class="text-gray-700 text-base mb-2">
-                Psych is an expert and passionate guide to the most intimate
-                aspects of our nature, serving up the equivalent of a serious
-                university course while being funny, engaging, and full of
-                memorable anecdotes. But Psych is much more than a comprehensive
-                overview of the field of psychology. Bloom reveals what
-                psychology can tell us about the most pressing moral and
-                political issues of our time—including belief in conspiracy
-                theories, the role of genes in explaining human differences, and
-                the nature of prejudice and hatred.
+                《心靈》是一位專業而充滿熱情的導遊，帶領我們深入了解自己內心最深處的層面，就像是一門嚴謹的大學課程，同時兼具幽默、吸引力，並充滿著令人難忘的趣聞軼事。然而，《心靈》絕非僅是心理學領域的全面總覽。布魯姆揭示了心理學對我們這個時代最迫切的道德和政治議題所能提供的洞見，包括對陰謀論的信仰、基因在解釋人類差異方面的作用，以及偏見與仇恨的本質。
               </p>
             </div>
             <div class="flex justify-between items-end">
