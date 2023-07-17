@@ -22,6 +22,7 @@ import blue from "@/assets/p0079_m.png";
 import pink from "@/assets/pink_paper.jpg";
 import { getLCP, getFID, getCLS } from "web-vitals";
 import { path } from "d3";
+import axios from "axios";
 
 export default {
   props: {
@@ -32,6 +33,10 @@ export default {
   setup(props) {
     const source = ref(pink);
     const route = useRoute();
+
+    axios.get("http://localhost:8080/").then((res) => {
+      console.log(res);
+    });
     watch(
       () => route.path,
       async (path) => {

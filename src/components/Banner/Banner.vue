@@ -1,5 +1,5 @@
 <template>
-  <div class="p-4 max-w-[1200px] mx-auto">
+  <div class="p-4 max-w-[1200px] mx-auto mt-[130px] mb-[50px]">
     <div class="container relative">
       <router-link class="mr-5 hover:text-gray-900" to="/project">
         <div

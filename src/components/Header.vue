@@ -14,7 +14,7 @@
           <Logo></Logo>
         </router-link>
         <nav
-          class="md:ml-auto flex flex-wrap items-center text-base md:justify-center justify-between"
+          class="md:ml-auto my-6 flex flex-wrap items-center text-base md:justify-center justify-between"
         >
           <router-link
             class="mr-5 hover:text-gray-900 font-bold"

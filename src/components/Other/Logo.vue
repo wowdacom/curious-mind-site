@@ -6,8 +6,7 @@
       <img src="https://i.imgur.com/biXQwA3.jpg" />
     </div>
     <div class="logo-text">
-      <div class="ml-3 text-md">Curious Mind</div>
-      <div class="ml-3 text-md">Site</div>
+      <div class="ml-3 text-2xl">Curious Mind Site</div>
     </div>
   </div>
 </template>
