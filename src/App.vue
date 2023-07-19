@@ -34,9 +34,6 @@ export default {
     const source = ref(pink);
     const route = useRoute();
 
-    axios.get("http://localhost:8080/").then((res) => {
-      console.log(res);
-    });
     watch(
       () => route.path,
       async (path) => {

@@ -4,10 +4,10 @@ import App from "./App.vue";
 import Home from "./components/Pages/Home.vue";
 import FindResources from "./components/Pages/FindResources.vue";
 import HappinessArticleSinglePage from "./components/Pages/HappinessArticleSinglePage.vue";
-import HappinessArticleList from "./components/HappinessProject/ArticleList.vue";
-import BookReviewArticleList from "./components/BookReview/ArticleList.vue";
-import TechStudiesList from "./components/TechStudies/ArticleList.vue";
-import BiblicalStudiesList from "./components/BiblicalStudiesList/ArticleList.vue";
+import HappinessArticleList from "./components/HappinessProject/HappinessProjects.vue";
+import BookReviewArticleList from "./components/BookReview/BookReviews.vue";
+import TechStudiesList from "./components/TechStudies/TechStudies.vue";
+import BiblicalStudiesList from "./components/BiblicalStudiesList/BiblicalStudiesLists.vue";
 import About from "./components/Pages/About.vue";
 import SingleArticle from "./components/Pages/SingleArticle.vue";
 
@@ -24,47 +24,39 @@ const router = createRouter({
       component: Home,
     },
     {
-      path: "/resources/",
+      path: "/resources",
       name: "resources",
       component: FindResources,
     },
     {
-      path: "/happiness-proposal/",
+      path: "/happiness-proposal",
       name: "happiness-proposal",
       component: HappinessArticleList,
+      children: [{ path: "/:id?", component: HappinessArticleSinglePage }],
     },
     {
-      path: "/happiness-proposal/:id?",
-      name: "happiness-proposal-single-page",
-      component: HappinessArticleSinglePage,
-    },
-    {
-      path: "/book-reviews/",
+      path: "/book-reviews",
       name: "/book-reviews",
       component: BookReviewArticleList,
     },
     {
-      path: "/tech-studies/",
+      path: "/tech-studies",
       name: "tech-studies",
       component: TechStudiesList,
     },
     {
-      path: "/biblical-studies/",
+      path: "/biblical-studies",
       name: "biblical-studies",
       component: BiblicalStudiesList,
+      children: [{ path: "/:title", component: SingleArticle }],
     },
     {
-      path: "/biblical-studies/:title/",
-      name: "biblical-studies",
-      component: SingleArticle,
-    },
-    {
-      path: "/article/:title/",
+      path: "/article/:title",
       name: "Article",
       component: SingleArticle,
     },
     {
-      path: "/about/",
+      path: "/about",
       name: "About",
       component: About,
     },

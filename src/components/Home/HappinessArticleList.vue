@@ -18,7 +18,7 @@
             </p>
             <router-link
               class="text-indigo-500 inline-flex items-center mt-4 cursor-pointer"
-              :to="`/blog/Meditation bushwick direct trade taxidermy shaman`"
+              to="/happiness-proposal"
               >看更多
               <svg
                 class="w-4 h-4 ml-2"
@@ -52,7 +52,7 @@
             </p>
             <router-link
               class="text-indigo-500 inline-flex items-center mt-4 cursor-pointer"
-              :to="`/blog/Meditation bushwick direct trade taxidermy shaman`"
+              to="/happiness-proposal"
               >看更多
               <svg
                 class="w-4 h-4 ml-2"
@@ -86,7 +86,7 @@
             </p>
             <router-link
               class="text-indigo-500 inline-flex items-center mt-4 cursor-pointer"
-              :to="`/blog/Meditation bushwick direct trade taxidermy shaman`"
+              to="/happiness-proposal"
               >看更多
               <svg
                 class="w-4 h-4 ml-2"
@@ -120,7 +120,7 @@
             </p>
             <router-link
               class="text-indigo-500 inline-flex items-center mt-4 cursor-pointer"
-              :to="`/blog/Meditation bushwick direct trade taxidermy shaman`"
+              to="/happiness-proposal"
               >看更多
               <svg
                 class="w-4 h-4 ml-2"
@@ -154,7 +154,7 @@
             </p>
             <router-link
               class="text-indigo-500 inline-flex items-center mt-4 cursor-pointer"
-              :to="`/blog/Woke master cleanse drinking vinegar salvia`"
+              to="/happiness-proposal"
             >
               看更多
               <svg
