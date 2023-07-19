@@ -15,7 +15,6 @@ import "virtual:windi.css";
 import "@/../node_modules/leaflet/dist/leaflet.css";
 
 const router = createRouter({
-  base: "./",
   history: createWebHashHistory(),
   routes: [
     {
